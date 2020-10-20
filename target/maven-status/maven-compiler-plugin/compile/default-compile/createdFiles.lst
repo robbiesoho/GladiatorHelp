@@ -1,6 +1,0 @@
-com\web\controller\UserController.class
-com\web\util\ConnectionUtil.class
-com\web\model\User.class
-com\web\repo\DaoContract.class
-com\web\service\UserService.class
-com\web\repo\UserDao.class
