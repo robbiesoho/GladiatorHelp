@@ -13,7 +13,7 @@ public class ConnectionUtil {
 		}
 	}
 
-	private String url = System.getenv("project1_url");
+	private String url = System.getenv("url");
 	private String password = System.getenv("password");
 	private String username = System.getenv("username");
 	private static ConnectionUtil instance;
