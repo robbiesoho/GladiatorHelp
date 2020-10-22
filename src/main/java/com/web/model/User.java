@@ -30,6 +30,18 @@ public class User {
 		this.roleId = roleId;
 	}
 
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+
+	}
+
+	public User() {
+		super();
+
+	}
+
 	public int getId() {
 		return id;
 	}

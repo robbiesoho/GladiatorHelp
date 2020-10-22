@@ -15,20 +15,8 @@ import com.web.util.ConnectionUtil;
 
 public class UserDao implements DaoContract<User, Integer> {
 	static Logger log = Logger.getLogger(UserDao.class);
-
-	public static void main(String[] args) {
-		UserDao ud = new UserDao();
-//		for (User u : ud.findAll()) {
-//			System.out.println(u);
-//		}
-		System.out.println(ud.findAll().size());
-//		ud.create(new User("bigboy", "passasdf", "joasdf", "shmoasdf", "glad@gmail.comas", 1));
-		ud.delete(5);
-		System.out.println("---");
-		System.out.println(ud.findAll().size());
-
-	}
-
+	
+	
 	@Override
 	public List<User> findAll() {
 		List<User> users = new LinkedList<>();
