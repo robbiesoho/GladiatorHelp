@@ -30,4 +30,10 @@ public class UserDaoTest {
 		assertNotNull(u);
 	}
 
+	@Test
+	public void findByNameTest() {
+		User u = ud.findByName("testUser");
+		assertNotNull(u);
+	}
+
 }

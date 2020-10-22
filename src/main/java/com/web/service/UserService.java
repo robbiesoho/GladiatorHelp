@@ -4,7 +4,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 import com.web.model.User;
-import com.web.repo.DaoContract;
 import com.web.repo.UserDao;
 import com.web.util.MD5Utils;
 
@@ -12,11 +11,12 @@ public class UserService {
 	private static final Charset UTF_8 = StandardCharsets.UTF_8;
 	private static final String OUTPUT_FORMAT = "%-20s:%s";
 
-	private DaoContract<User, Integer> udao;
+//	private DaoContract<User, Integer> udao;
+	private UserDao udao;
 
-	private MD5Utils md5;
+//	private MD5Utils md5;
 
-	public UserService(DaoContract<User, Integer> udao) {
+	public UserService(UserDao udao) {
 		super();
 		this.udao = udao;
 	}
@@ -37,6 +37,14 @@ public class UserService {
 		} else {
 			return false;
 		}
+	}
+
+	public boolean isManager(String username) {
+		User user = udao.findByName(username);
+		int roleId = user.getRoleId();
+		boolean isMan = (roleId == 2) ? true : false;
+		return isMan;
+
 	}
 
 }

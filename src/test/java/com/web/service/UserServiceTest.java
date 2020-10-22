@@ -39,8 +39,15 @@ public class UserServiceTest {
 //	}
 
 	@Test
-	public void verifyLoginCreds() {
+	public void verifyLoginCredsTest() {
 		boolean checkStatus = us.validateCredentials("testUser", "pass");
+		assertTrue(checkStatus);
+
+	}
+
+	@Test
+	public void checkIfManagerTest() {
+		boolean checkStatus = us.isManager("testManager");
 		assertTrue(checkStatus);
 
 	}

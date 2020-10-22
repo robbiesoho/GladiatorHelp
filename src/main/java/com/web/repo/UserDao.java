@@ -15,8 +15,7 @@ import com.web.util.ConnectionUtil;
 
 public class UserDao implements DaoContract<User, Integer> {
 	static Logger log = Logger.getLogger(UserDao.class);
-	
-	
+
 	@Override
 	public List<User> findAll() {
 		List<User> users = new LinkedList<>();
