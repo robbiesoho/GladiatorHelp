@@ -13,6 +13,8 @@ public class Reimbursement {
 	private int resolverId;
 	private int statusId;
 	private int typeId;
+	private String status;
+	private String type;
 
 	public int getId() {
 		return id;
@@ -135,6 +137,33 @@ public class Reimbursement {
 
 	public Reimbursement() {
 		super();
+	}
+
+	public Reimbursement(int id, int amount, LocalDateTime submitted, String description, String status, String type) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.submitted = submitted;
+		this.description = description;
+		this.setStatus(status);
+		this.setType(type);
+
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

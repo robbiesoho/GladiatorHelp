@@ -16,6 +16,12 @@ import com.web.util.ConnectionUtil;
 public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	static Logger log = Logger.getLogger(UserDao.class);
 
+//	public static void main(String[] args) {
+//		ReimbursementDao rd = new ReimbursementDao();
+//		rd.findCompleteReimbursements();
+//
+//	}
+
 	@Override
 	public List<Reimbursement> findAll() {
 		List<Reimbursement> reims = new LinkedList<>();
@@ -145,7 +151,6 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return 1;
 	}
 
-	
 	public List<Reimbursement> findReimsByUserId(Integer id) {
 		List<Reimbursement> reims = new LinkedList<>();
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
@@ -164,6 +169,33 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 		} catch (SQLException e) {
 			log.error("SQL exception for Reimbursements.findReimsByUserId: " + e.getMessage());
+			e.printStackTrace();
+		}
+		return reims;
+
+	}
+
+	public List<Reimbursement> findCompleteReimbursements() {
+		List<Reimbursement> reims = new LinkedList<>();
+		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
+			Statement s = conn.createStatement();
+			String sql = "select * from complete_reimbursement";
+			ResultSet rs = s.executeQuery(sql);
+			while (rs.next()) {
+//				System.out.println(rs.getInt(1));
+//				System.out.println(rs.getInt(2));
+//				System.out.println(rs.getTimestamp(3).toLocalDateTime());
+//				System.out.println(rs.getString(4));
+//				System.out.println(rs.getString(5));
+//				System.out.println(rs.getString(6));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getTimestamp(3).toLocalDateTime(),
+						rs.getString(4), rs.getString(5), rs.getString(6)));
+			}
+			rs.close();
+			s.close();
+
+		} catch (SQLException e) {
+			log.error("SQL exception for Reimbursements.findAll: " + e.getMessage());
 			e.printStackTrace();
 		}
 		return reims;

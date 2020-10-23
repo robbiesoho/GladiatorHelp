@@ -3,8 +3,6 @@ package com.web.service;
 import java.util.List;
 
 import com.web.model.Reimbursement;
-import com.web.model.User;
-import com.web.repo.DaoContract;
 import com.web.repo.ReimbursementDao;
 
 public class ReimbursementService {
@@ -26,5 +24,9 @@ public class ReimbursementService {
 
 	public List<Reimbursement> retrieveReimbursementsByUserId(Integer id) {
 		return rdao.findReimsByUserId(id);
+	}
+
+	public List<Reimbursement> findCompleteReimbursements() {
+		return rdao.findCompleteReimbursements();
 	}
 }

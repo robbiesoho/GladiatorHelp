@@ -1,0 +1,16 @@
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_submitted_reimbursement
+SQL exception for Reimbursements.findAll: The url cannot be null
+SQL exception for Reimbursements.findAll: The url cannot be null
+SQL exception for Reimbursements.findAll: The url cannot be null
+SQL exception for Reimbursements.findAll: The url cannot be null
+SQL exception for Reimbursements.findAll: ERROR: relation "complete_submitted_reimbursement" does not exist
+  Position: 15
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_submitted_reimbursement
+SQL exception for Reimbursements.findAll: ERROR: relation "complete_submitted_reimbursement" does not exist
+  Position: 15
+SQL exception for Reimbursements.findAll: ERROR: relation "reimbursement" does not exist
+  Position: 15
+SQL exception for Reimbursements.findAll: ERROR: relation "reimbursement" does not exist
+  Position: 15
+SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
+SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
