@@ -21,7 +21,8 @@ public class UserController {
 		String password = req.getParameter("password");
 		if (us.validateCredentials(username, password)) {
 			if (us.isManager(username)) {
-				return "html/manager/manWelcome.html";
+				return "html/manager.html";
+//				return "html/manager/manWelcome.html";
 
 			} else {
 				return "html/gladiator/welcome.html";

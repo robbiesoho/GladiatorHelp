@@ -14,3 +14,4 @@ SQL exception for Reimbursements.findAll: ERROR: relation "reimbursement" does n
   Position: 15
 SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
 SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_reimbursement
