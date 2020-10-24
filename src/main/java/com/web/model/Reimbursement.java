@@ -15,6 +15,7 @@ public class Reimbursement {
 	private int typeId;
 	private String status;
 	private String type;
+	private String username;
 
 	public int getId() {
 		return id;
@@ -139,14 +140,16 @@ public class Reimbursement {
 		super();
 	}
 
-	public Reimbursement(int id, int amount, LocalDateTime submitted, String description, String status, String type) {
+	public Reimbursement(int id, String username, LocalDateTime submitted, String description, String status,
+			String type, int amount) {
 		super();
 		this.id = id;
-		this.amount = amount;
+		this.setUsername(username);
 		this.submitted = submitted;
 		this.description = description;
-		this.setStatus(status);
-		this.setType(type);
+		this.status = status;
+		this.type = type;
+		this.amount = amount;
 
 	}
 
@@ -164,6 +167,14 @@ public class Reimbursement {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

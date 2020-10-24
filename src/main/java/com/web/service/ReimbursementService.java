@@ -29,4 +29,12 @@ public class ReimbursementService {
 	public List<Reimbursement> findCompleteReimbursements() {
 		return rdao.findCompleteReimbursements();
 	}
+
+	public List<Reimbursement> findCompletePendingReims() {
+		return rdao.findCompletePendingReims();
+	}
+
+	public List<Reimbursement> findReimsByUsername(String name) {
+		return rdao.findReimsByUsername(name);
+	}
 }

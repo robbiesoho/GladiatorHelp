@@ -15,3 +15,9 @@ SQL exception for Reimbursements.findAll: ERROR: relation "reimbursement" does n
 SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
 SQL exception for Reimbursements.findAll: ResultSet not positioned properly, perhaps you need to call next.
 SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_reimbursement
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_reimbursement
+SQL exception for Reimbursements.findAll: Bad value for type int : 2020-10-18 09:47:28.934698
+SQL exception for Reimbursements.findAll: The column index is out of range: 7, number of columns: 6.
+SQL exception for Reimbursements.findAll: The column index is out of range: 7, number of columns: 6.
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_reimbursement
+SQL exception for Reimbursements.findAll: ERROR: permission denied for view complete_reimbursement

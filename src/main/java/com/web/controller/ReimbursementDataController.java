@@ -39,4 +39,13 @@ public class ReimbursementDataController {
 		}
 	}
 
+	public void sendCompletePendingReimbursements(HttpServletResponse res) {
+		res.setContentType("text/json");
+		List<Reimbursement> reims = rs.findCompletePendingReims();
+		try {
+			res.getWriter().println(new ObjectMapper().writeValueAsString(reims));
+		} catch (IOException e) {
+		}
+	}
+
 }

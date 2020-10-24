@@ -18,7 +18,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 //	public static void main(String[] args) {
 //		ReimbursementDao rd = new ReimbursementDao();
-//		rd.findCompleteReimbursements();
+//		System.out.println(rd.findReimsByUsername("go4it"));
 //
 //	}
 
@@ -117,6 +117,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return null;
 	}
 
+//	callable vs prepared
 	public int approveReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call approve_reimbursement(?, ?)";
@@ -182,17 +183,61 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			String sql = "select * from complete_reimbursement";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
-//				System.out.println(rs.getInt(1));
-//				System.out.println(rs.getInt(2));
-//				System.out.println(rs.getTimestamp(3).toLocalDateTime());
-//				System.out.println(rs.getString(4));
-//				System.out.println(rs.getString(5));
-//				System.out.println(rs.getString(6));
-				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(4), rs.getString(5), rs.getString(6)));
+//				System.out.println(rs.getString(2));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
 			}
 			rs.close();
 			s.close();
+
+		} catch (SQLException e) {
+			log.error("SQL exception for Reimbursements.findAll: " + e.getMessage());
+			e.printStackTrace();
+		}
+		return reims;
+
+	}
+
+	public List<Reimbursement> findCompletePendingReims() {
+		List<Reimbursement> reims = new LinkedList<>();
+		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
+			Statement s = conn.createStatement();
+			String sql = "select * from complete_reimbursement where status = 'pending'";
+			ResultSet rs = s.executeQuery(sql);
+			while (rs.next()) {
+//				System.out.println(rs.getInt(1));
+//				System.out.println(rs.getString(2));
+//				System.out.println(rs.getString(4));
+//				System.out.println(rs.getString(5));
+//				System.out.println(rs.getString(6));
+//				System.out.println(rs.getString(7));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+			}
+			rs.close();
+			s.close();
+
+		} catch (SQLException e) {
+			log.error("SQL exception for Reimbursements.findAll: " + e.getMessage());
+			e.printStackTrace();
+		}
+		return reims;
+
+	}
+
+	public List<Reimbursement> findReimsByUsername(String name) {
+		List<Reimbursement> reims = new LinkedList<>();
+		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
+			String sql = "select * from complete_reimbursement where username = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+			}
+			rs.close();
+			ps.close();
 
 		} catch (SQLException e) {
 			log.error("SQL exception for Reimbursements.findAll: " + e.getMessage());
