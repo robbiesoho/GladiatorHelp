@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Gladiator user</title>
+    <title>Gladiator User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,27 +11,24 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <script src="../js/network.js"></script>
   </head>
-  <body onclick="printTheEventObject(event)">
-    <button onclick="printTheEventObject(event)">this is a button</button>
-    <input
-      value="username"
-      type="submit"
-      onclick="this.value=prompt('enter username')"
-    />
+  
+  <h1>Welcome dude</h1>
+  <!-- <% request.getSession().getAttribute("username") %> -->
 
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">name</th>
-          <th scope="col">type</th>
-          <th scope="col">furry</th>
-          <th scope="col">paws</th>
-        </tr>
-      </thead>
-      <tbody id="hallowsTableBody"></tbody>
-    </table>
+  <table class="table table-striped">
+    <thead >
+      <tr>
+        <th scope="col">submitted</th>
+        <th scope="col">description</th>
+        <th scope="col">status</th>
+        <th scope="col">type</th>
+        <th scope="col">amount</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody id="userReimBody"></tbody>
+  </table>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -43,6 +40,6 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="././js/dom.js"></script>
+    <script src="././js/userDom.js"></script>
   </body>
 </html>

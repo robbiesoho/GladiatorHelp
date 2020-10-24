@@ -19,9 +19,9 @@ public class UserController {
 	public String login(HttpServletRequest req) {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+
 		if (us.validateCredentials(username, password)) {
 			if (us.isManager(username)) {
-//				return "html/manager.html";
 				return "html/manager/manWelcome.html";
 
 			} else {
