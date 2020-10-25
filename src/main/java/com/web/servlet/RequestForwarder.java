@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.web.controller.ReimbursementController;
 import com.web.controller.ReimbursementDataController;
 import com.web.controller.UserController;
 
@@ -14,7 +15,8 @@ public class RequestForwarder {
 		switch (req.getRequestURI()) {
 		case "/Project1/login.page":
 			return new UserController().login(req);
-
+		case "/Project1/newclaim.page":
+			return new ReimbursementController().goToNewClaimPage(req);
 		default:
 			return "html/login.html";
 		}

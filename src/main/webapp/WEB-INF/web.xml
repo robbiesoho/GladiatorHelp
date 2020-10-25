@@ -9,12 +9,5 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-<servlet>
- <servlet-name>UserMainServlet</servlet-name>
- <servlet-class>UserMainServlet</servlet-class>
-</servlet>
-<servlet-mapping>
- <servlet-name>UserMainServlet</servlet-name>
- <url-pattern>/gladiator</url-pattern>
-</servlet-mapping>
+
 </web-app>

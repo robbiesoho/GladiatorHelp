@@ -27,24 +27,18 @@ function renderObjTable(r) {
 
   document.getElementById("userReimBody").append(tr);
 }
-
 const username = `${document.cookie}`.slice(9);
+
+document.getElementById("welcome-top").innerText = "Welcome " + username;
 
 async function fetchUserData(name, url) {
   const response = await fetch(url);
   const json = await response.json();
-  console.log(username);
   for (var obj of json) {
     if (obj["username"] == name) {
       renderObjTable(obj);
     }
   }
-}
-
-async function asyncFetch(url, expression) {
-  const response = await fetch(url);
-  const json = await response.json();
-  expression(json);
 }
 
 fetchUserData(username, "http://localhost:8080/Project1/complete.json");
