@@ -153,6 +153,25 @@ public class Reimbursement {
 
 	}
 
+	public Reimbursement(String username, String description, String status, int amount) {
+		super();
+		this.setUsername(username);
+		this.description = description;
+		this.status = status;
+		this.amount = amount;
+
+	}
+
+	public Reimbursement(int authorId, int amount, String description, int typeId, int statusId) {
+		super();
+		this.authorId = authorId;
+		this.amount = amount;
+		this.description = description;
+		this.typeId = typeId;
+		this.statusId = statusId;
+
+	}
+
 	public String getType() {
 		return type;
 	}

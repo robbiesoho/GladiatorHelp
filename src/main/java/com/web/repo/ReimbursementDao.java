@@ -74,8 +74,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return 0;
 	}
 
-	@Override
-	public int create(Reimbursement t) {
+	public String create(Reimbursement t) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "insert into reimbursement (amount, description, author_id, status_id, type_id) values (?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -91,11 +90,11 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			e.printStackTrace();
 
 		}
-		return 1;
+		return "";
 	}
 
 	@Override
-	public int delete(Integer i) {
+	public String delete(Integer i) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "delete from reimbursement where reim_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -108,7 +107,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 			e.printStackTrace();
 		}
-		return 1;
+		return null;
 	}
 
 	@Override

@@ -22,7 +22,7 @@ function renderPendingTable(reimbursements) {
   for (const r of reimbursements) {
     const tr = document.createElement("tr");
     const usernameTd = document.createElement("td");
-    const dateSubmitTD = document.createElement("td");
+    const dateSubmitTd = document.createElement("td");
     const descriptionTd = document.createElement("td");
     const statusTd = document.createElement("td");
     const typeTd = document.createElement("td");
@@ -32,17 +32,16 @@ function renderPendingTable(reimbursements) {
     approveBox.appendChild(approveButton);
 
     usernameTd.innerText = r.username;
-    dateSubmitTD.innerText = r.submitted;
+    dateSubmitTd.innerText = r.submitted;
     descriptionTd.innerText = r.description;
     statusTd.innerText = r.status;
     typeTd.innerText = r.type;
     amountTd.innerText = r.amount;
 
-    // approveBox.innerText = "boxapprove";
     approveButton.innerText = "approve";
     tr.append(
       usernameTd,
-      dateSubmitTD,
+      dateSubmitTd,
       descriptionTd,
       statusTd,
       typeTd,

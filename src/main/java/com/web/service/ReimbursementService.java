@@ -37,4 +37,12 @@ public class ReimbursementService {
 	public List<Reimbursement> findReimsByUsername(String name) {
 		return rdao.findReimsByUsername(name);
 	}
+
+	public String create(Reimbursement t) {
+		return rdao.create(t);
+	}
+
+	public String delete(int id) {
+		return rdao.delete(id);
+	}
 }

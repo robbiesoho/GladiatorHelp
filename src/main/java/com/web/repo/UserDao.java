@@ -69,7 +69,7 @@ public class UserDao implements DaoContract<User, Integer> {
 	}
 
 	@Override
-	public int create(User t) {
+	public String create(User t) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "insert into user_acc (username, password, first,last, email, role_id) values (?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -86,11 +86,11 @@ public class UserDao implements DaoContract<User, Integer> {
 			e.printStackTrace();
 
 		}
-		return 1;
+		return null;
 	}
 
 	@Override
-	public int delete(Integer i) {
+	public String delete(Integer i) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "delete from user_acc where user_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -103,7 +103,7 @@ public class UserDao implements DaoContract<User, Integer> {
 
 			e.printStackTrace();
 		}
-		return 1;
+		return null;
 	}
 
 	@Override

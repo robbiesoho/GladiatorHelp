@@ -17,6 +17,10 @@ public class RequestForwarder {
 			return new UserController().login(req);
 		case "/Project1/newclaim.page":
 			return new ReimbursementController().goToNewClaimPage(req);
+		case "/Project1/submitclaim.page":
+			return new ReimbursementController().create(req);
+		case "/Project1/deleteReimbursement.page":
+			return new ReimbursementController().delete(req);
 		default:
 			return "html/login.html";
 		}

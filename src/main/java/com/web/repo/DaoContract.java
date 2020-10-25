@@ -10,9 +10,9 @@ public interface DaoContract<T, I> {
 
 	int update(T t);
 
-	int create(T t);
+	String create(T t);
 
-	int delete(I i);
+	String delete(I i);
 
 	T findByName(String name);
 
