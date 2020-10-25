@@ -53,6 +53,7 @@ public class ReimbursementController {
 	public String delete(HttpServletRequest req) {
 		int id = Integer.parseInt(req.getParameter("id"));
 		rs.delete(id);
-		return "html/gladiator/main.html";
+		return "html/asd.page";
+//		return "html/gladiator/main.html";
 	}
 }

@@ -1,14 +1,12 @@
 package com.web.model;
 
-import org.junit.Before;
-
 public class UserModelTest {
 	private User um;
 
-	@Before
-	public void setup() {
-		User user = new User();
-	}
+//	@Before
+//	public void setup() {
+//		User user = new User();
+//	}
 
 //	@Test
 //	public void findAllTest() {

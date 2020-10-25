@@ -44,3 +44,10 @@ Reimbursement createdcom.web.model.Reimbursement@7d1240e6
 Reimbursement createdcom.web.model.Reimbursement@39b46c1
 Reimbursement createdcom.web.model.Reimbursement@3daedc
 Reimbursement createdcom.web.model.Reimbursement@5164b10c
+SQL exception for User.findByName: The url cannot be null
+SQL exception for User.findAll: The url cannot be null
+SQL exception for User.findById: The url cannot be null
+SQL exception for Reimbursements.findReimsByUserId: The url cannot be null
+SQL exception for Reimbursements.findAll: The url cannot be null
+SQL exception for User.findByName: The url cannot be null
+SQL exception for User.findByName: The url cannot be null
