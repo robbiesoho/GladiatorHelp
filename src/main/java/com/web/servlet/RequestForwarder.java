@@ -41,15 +41,27 @@ public class RequestForwarder {
 	public void data(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		switch (req.getRequestURI()) {
 
-		case "/Project1/all.json":
+//		case "/Project1/all.json":
+//			new ReimbursementDataController().sendAllData(res);
+//			break;
+//
+//		case "/Project1/complete.json":
+//			new ReimbursementDataController().sendCompleteReimbursements(res);
+//			break;
+//
+//		case "/Project1/pending.json":
+//			new ReimbursementDataController().sendCompletePendingReimbursements(res);
+//			break;
+
+		case "/Project1-0.0.1-SNAPSHOT/all.json":
 			new ReimbursementDataController().sendAllData(res);
 			break;
 
-		case "/Project1/complete.json":
+		case "/Project1-0.0.1-SNAPSHOT/complete.json":
 			new ReimbursementDataController().sendCompleteReimbursements(res);
 			break;
 
-		case "/Project1/pending.json":
+		case "/Project1-0.0.1-SNAPSHOT/pending.json":
 			new ReimbursementDataController().sendCompletePendingReimbursements(res);
 			break;
 
