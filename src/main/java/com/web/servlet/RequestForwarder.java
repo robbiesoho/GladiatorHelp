@@ -13,13 +13,25 @@ public class RequestForwarder {
 
 	public String routes(HttpServletRequest req) {
 		switch (req.getRequestURI()) {
-		case "/Project1/login.page":
+//		case "/Project1/login.page":
+//			return new UserController().login(req);
+//		case "/Project1/newclaim.page":
+//			return new ReimbursementController().goToNewClaimPage(req);
+//		case "/Project1/submitclaim.page":
+//			return new ReimbursementController().create(req);
+//		case "/Project1/deleteReimbursement.page":
+//			return new ReimbursementController().delete(req);
+//		default:
+//			return "html/login.html";
+//		}
+
+		case "/Project1-0.0.1-SNAPSHOT/login.page":
 			return new UserController().login(req);
-		case "/Project1/newclaim.page":
+		case "/Project1-0.0.1-SNAPSHOT/newclaim.page":
 			return new ReimbursementController().goToNewClaimPage(req);
-		case "/Project1/submitclaim.page":
+		case "/Project1-0.0.1-SNAPSHOT/submitclaim.page":
 			return new ReimbursementController().create(req);
-		case "/Project1/deleteReimbursement.page":
+		case "/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page":
 			return new ReimbursementController().delete(req);
 		default:
 			return "html/login.html";
