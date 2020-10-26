@@ -47,4 +47,8 @@ public class UserService {
 
 	}
 
+	public void create(User user) {
+		udao.create(user);
+	}
+
 }

@@ -52,3 +52,6 @@ SQL exception for Reimbursements.findAll: The url cannot be null
 SQL exception for User.findByName: The url cannot be null
 SQL exception for User.findByName: The url cannot be null
 Reimbursement createdcom.web.model.Reimbursement@3f48f795
+Reimbursement createdcom.web.model.Reimbursement@7d120cc3
+Reimbursement createdcom.web.model.Reimbursement@7813d1ab
+25-10-2020 19:54:37 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null

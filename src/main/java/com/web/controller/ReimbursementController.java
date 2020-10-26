@@ -53,7 +53,18 @@ public class ReimbursementController {
 	public String delete(HttpServletRequest req) {
 		int id = Integer.parseInt(req.getParameter("id"));
 		rs.delete(id);
-		return "html/asd.page";
+//		can't bring user back to main and keep the username cookie after deleteing reimbursement
+		return "asd.page";
 //		return "html/gladiator/main.html";
 	}
+
+	public String goToAllReimPage(HttpServletRequest req) {
+		return "html/manager/allReimbursements.html";
+
+	}
+
+	public String goToPendingReimPage(HttpServletRequest req) {
+		return "html/manager/pendingReimbursements.html";
+	}
+
 }

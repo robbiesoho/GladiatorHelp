@@ -5,15 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Manager page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script defer src="../js/dom.js"></script>   -->
 
-          <!--this will defer the loading of the page until the dom has rendered -->
-    <!-- <script>
-      console.log("js inside the html!!! woohoo!!!");
-      function clicked() {
-        console.log("clicked");
-      }
-    </script> -->
 
     <link
       rel="stylesheet"
@@ -23,28 +15,13 @@
     />
   </head>
   <body>
-    <!-- <button onclick="printTheEventObject(event)">this is a button</button>
-    <input
-      value="username"
-      type="submit"
-      onclick="this.value=prompt('enter username')"
-    /> -->
-	<div>
-	<table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">user</th>
-          <th scope="col">submitted</th>
-          <th scope="col">description</th>
-          <th scope="col">status</th>
-          <th scope="col">type</th>
-          <th scope="col">amount</th>
-          <th scope="col">X</th>
-        </tr>
-      </thead>
-      <tbody id="completeReimBody"></tbody>
-    </table>
-	</div>
+    <h1>Welcome manager</h1>
+    <h3>What would you like to do?</h3>
+
+    <a href="allReimbursements.page">View all reimbursements</a><br>
+    <a href="pendingReimbursements.page">View all pending reimbursements</a><br>
+    <a href="newUser.page">Create new gladiator account</a><br>
+     
     
 
     <script
