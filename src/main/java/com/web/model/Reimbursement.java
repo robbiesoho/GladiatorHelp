@@ -17,86 +17,6 @@ public class Reimbursement {
 	private String type;
 	private String username;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
-	public String getSubmitted() {
-		return submitted;
-	}
-
-	public void setSubmitted(String submitted) {
-		this.submitted = submitted;
-	}
-
-	public LocalDateTime getResolved() {
-		return resolved;
-	}
-
-	public void setResolved(LocalDateTime resolved) {
-		this.resolved = resolved;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public byte[] getReciept() {
-		return reciept;
-	}
-
-	public void setReciept(byte[] reciept) {
-		this.reciept = reciept;
-	}
-
-	public int getAuthorId() {
-		return authorId;
-	}
-
-	public void setAuthorId(int authorId) {
-		this.authorId = authorId;
-	}
-
-	public int getResolverId() {
-		return resolverId;
-	}
-
-	public void setResolverId(int resolverId) {
-		this.resolverId = resolverId;
-	}
-
-	public int getStatusId() {
-		return statusId;
-	}
-
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
-	}
-
-	public int getTypeId() {
-		return typeId;
-	}
-
-	public void setTypeId(int typeId) {
-		this.typeId = typeId;
-	}
-
 	public Reimbursement(int id, int amount, String submitted, LocalDateTime resolved, String description,
 			byte[] reciept, int authorId, int resolverId, int statusId, int typeId) {
 		super();
@@ -214,6 +134,86 @@ public class Reimbursement {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public String getSubmitted() {
+		return submitted;
+	}
+
+	public void setSubmitted(String submitted) {
+		this.submitted = submitted;
+	}
+
+	public LocalDateTime getResolved() {
+		return resolved;
+	}
+
+	public void setResolved(LocalDateTime resolved) {
+		this.resolved = resolved;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public byte[] getReciept() {
+		return reciept;
+	}
+
+	public void setReciept(byte[] reciept) {
+		this.reciept = reciept;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
+	}
+
+	public int getResolverId() {
+		return resolverId;
+	}
+
+	public void setResolverId(int resolverId) {
+		this.resolverId = resolverId;
+	}
+
+	public int getStatusId() {
+		return statusId;
+	}
+
+	public void setStatusId(int statusId) {
+		this.statusId = statusId;
+	}
+
+	public int getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
 	}
 
 	public String getStatus() {

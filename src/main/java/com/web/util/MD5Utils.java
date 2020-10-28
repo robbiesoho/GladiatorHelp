@@ -39,7 +39,6 @@ public class MD5Utils {
 
 		byte[] md5InBytes = MD5Utils.digest(pText.getBytes(UTF_8));
 		System.out.println(String.format(OUTPUT_FORMAT, "MD5 (hex) ", bytesToHex(md5InBytes)));
-		// fixed length, 16 bytes, 128 bits.
 		System.out.println(String.format(OUTPUT_FORMAT, "MD5 (length)", md5InBytes.length));
 
 	}

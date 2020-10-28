@@ -65,12 +65,6 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return reimb;
 	}
 
-	@Override
-	public int update(Reimbursement t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	public String create(Reimbursement t) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "insert into reimbursement (amount, description, author_id, status_id, type_id) values (?,?,?,?,?)";
@@ -107,12 +101,6 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return null;
 	}
 
-	@Override
-	public Reimbursement findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public String approveReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call approve_reimbursement(?, ?)";
@@ -135,7 +123,6 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call deny_reimbursement(?, ?)";
 			CallableStatement ps = conn.prepareCall(sql);
-//			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, reimbId);
 			ps.setInt(2, userId);
 			int rs = ps.executeUpdate();

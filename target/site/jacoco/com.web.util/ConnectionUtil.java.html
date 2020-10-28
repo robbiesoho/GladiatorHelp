@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConnectionUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Project1</a> &gt; <a href="index.source.html" class="el_package">com.web.util</a> &gt; <span class="el_source">ConnectionUtil.java</span></div><h1>ConnectionUtil.java</h1><pre class="source lang-java linenums">package com.web.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectionUtil {
+	{
+		try {
+<span class="fc" id="L10">			Class.forName(&quot;org.postgresql.Driver&quot;);</span>
+<span class="nc" id="L11">		} catch (ClassNotFoundException e) {</span>
+<span class="nc" id="L12">			e.printStackTrace();</span>
+<span class="fc" id="L13">		}</span>
+	}
+
+//	private String url = System.getenv(&quot;url&quot;);
+//	private String password = System.getenv(&quot;password&quot;);
+//	private String username = System.getenv(&quot;username&quot;);
+
+//	private String testUrl = &quot;jdbc:postgresql://portodb.czsfcl0hvotw.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1test_schema&quot;;
+
+//	it's better to store this info in environment variables
+<span class="fc" id="L23">	private String url = &quot;jdbc:postgresql://portodb.czsfcl0hvotw.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1_schema&quot;;</span>
+<span class="fc" id="L24">	private String password = &quot;porto&quot;;</span>
+<span class="fc" id="L25">	private String username = &quot;roberto&quot;;</span>
+	private static ConnectionUtil instance;
+
+<span class="fc" id="L28">	private ConnectionUtil() {</span>
+<span class="fc" id="L29">	}</span>
+
+	public static ConnectionUtil getInstance() {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">		if (instance == null) {</span>
+<span class="fc" id="L33">			instance = new ConnectionUtil();</span>
+		}
+<span class="fc" id="L35">		return instance;</span>
+	}
+
+	public Connection getConnection() throws SQLException {
+<span class="fc" id="L39">		return DriverManager.getConnection(url, username, password);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

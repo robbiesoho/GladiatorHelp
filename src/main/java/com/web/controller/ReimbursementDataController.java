@@ -60,6 +60,7 @@ public class ReimbursementDataController {
 		}
 	}
 
+//	This would normally go in a session data controller
 	public void sendSessionName(HttpServletResponse res, HttpServletRequest req) {
 		res.setContentType("text/json");
 		String username = sc.getSessionUsername(req);

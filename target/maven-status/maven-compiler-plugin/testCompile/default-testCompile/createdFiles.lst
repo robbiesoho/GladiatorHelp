@@ -1,5 +1,5 @@
 com\web\service\ReimbursementServiceTest.class
 com\web\repo\UserDaoTest.class
+com\web\service\UserServiceTest.class
 com\web\controller\UserControllerTest.class
 com\web\model\UserModelTest.class
-com\web\service\UserServiceTest.class

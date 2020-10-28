@@ -8,12 +8,8 @@ public interface DaoContract<T, I> {
 
 	T findById(I i);
 
-	int update(T t);
-
 	String create(T t);
 
 	String delete(I i);
-
-	T findByName(String name);
 
 }

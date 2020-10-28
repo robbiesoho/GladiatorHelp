@@ -18,6 +18,8 @@ public class ConnectionUtil {
 //	private String username = System.getenv("username");
 
 //	private String testUrl = "jdbc:postgresql://portodb.czsfcl0hvotw.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1test_schema";
+
+//	it's better to store this info in environment variables
 	private String url = "jdbc:postgresql://portodb.czsfcl0hvotw.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1_schema";
 	private String password = "porto";
 	private String username = "roberto";

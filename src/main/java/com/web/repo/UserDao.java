@@ -63,12 +63,6 @@ public class UserDao implements DaoContract<User, Integer> {
 	}
 
 	@Override
-	public int update(User t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public String create(User t) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "insert into user_acc (username, password, first,last, email, role_id) values (?,?,?,?,?,?)";
@@ -106,7 +100,6 @@ public class UserDao implements DaoContract<User, Integer> {
 		return null;
 	}
 
-	@Override
 	public User findByName(String name) {
 		User user = null;
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {

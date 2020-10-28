@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReimbursementDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Project1</a> &gt; <a href="index.source.html" class="el_package">com.web.repo</a> &gt; <span class="el_source">ReimbursementDao.java</span></div><h1>ReimbursementDao.java</h1><pre class="source lang-java linenums">package com.web.repo;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.web.model.Reimbursement;
+import com.web.util.ConnectionUtil;
+
+<span class="fc" id="L17">public class ReimbursementDao implements DaoContract&lt;Reimbursement, Integer&gt; {</span>
+<span class="fc" id="L18">	static Logger log = Logger.getLogger(UserDao.class);</span>
+
+	@Override
+	public List&lt;Reimbursement&gt; findAll() {
+<span class="fc" id="L22">		List&lt;Reimbursement&gt; reims = new LinkedList&lt;&gt;();</span>
+<span class="pc" id="L23">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L24">			Statement s = conn.createStatement();</span>
+<span class="fc" id="L25">			String sql = &quot;select * from reimbursement&quot;;</span>
+<span class="fc" id="L26">			ResultSet rs = s.executeQuery(sql);</span>
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L29">				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2),</span>
+<span class="fc" id="L30">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),</span>
+<span class="fc" id="L31">						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));</span>
+
+			}
+<span class="fc" id="L34">			rs.close();</span>
+<span class="fc" id="L35">			s.close();</span>
+
+<span class="pc bpc" id="L37" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L38">			log.error(&quot;SQL exception for Reimbursements.findAll: &quot; + e.getMessage());</span>
+<span class="nc" id="L39">			e.printStackTrace();</span>
+<span class="fc" id="L40">		}</span>
+<span class="fc" id="L41">		return reims;</span>
+
+	}
+
+	@Override
+	public Reimbursement findById(Integer i) {
+<span class="nc" id="L47">		Reimbursement reimb = null;</span>
+<span class="nc" id="L48">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="nc" id="L49">			String sql = &quot;select * from user_acc where user_id = ?&quot;;</span>
+<span class="nc" id="L50">			PreparedStatement ps = conn.prepareStatement(sql);</span>
+<span class="nc" id="L51">			ps.setInt(1, i);</span>
+<span class="nc" id="L52">			ResultSet rs = ps.executeQuery();</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">			while (rs.next()) {</span>
+<span class="nc" id="L54">				reimb = new Reimbursement(rs.getInt(1), rs.getInt(2),</span>
+<span class="nc" id="L55">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),</span>
+<span class="nc" id="L56">						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10));</span>
+			}
+<span class="nc" id="L58">			ps.close();</span>
+<span class="nc" id="L59">			rs.close();</span>
+<span class="nc bnc" id="L60" title="All 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L61">			log.error(&quot;SQL exception for Reimbursement.findById: &quot; + e.getMessage());</span>
+
+<span class="nc" id="L63">			e.printStackTrace();</span>
+<span class="nc" id="L64">		}</span>
+<span class="nc" id="L65">		return reimb;</span>
+	}
+
+	public String create(Reimbursement t) {
+<span class="pc" id="L69">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L70">			String sql = &quot;insert into reimbursement (amount, description, author_id, status_id, type_id) values (?,?,?,?,?)&quot;;</span>
+<span class="fc" id="L71">			PreparedStatement ps = conn.prepareStatement(sql);</span>
+<span class="fc" id="L72">			ps.setInt(1, t.getAmount());</span>
+<span class="fc" id="L73">			ps.setString(2, t.getDescription());</span>
+<span class="fc" id="L74">			ps.setInt(3, t.getAuthorId());</span>
+<span class="fc" id="L75">			ps.setInt(4, t.getStatusId());</span>
+<span class="fc" id="L76">			ps.setInt(5, t.getTypeId());</span>
+<span class="fc" id="L77">			int updated = ps.executeUpdate();</span>
+<span class="fc" id="L78">			log.info(&quot;Reimbursement created&quot; + t);</span>
+<span class="pc bpc" id="L79" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L80">			log.error(&quot;Error while creating reimbursement: &quot; + e.getMessage());</span>
+<span class="nc" id="L81">			e.printStackTrace();</span>
+
+<span class="fc" id="L83">		}</span>
+<span class="fc" id="L84">		return &quot;&quot;;</span>
+	}
+
+	@Override
+	public String delete(Integer i) {
+<span class="pc" id="L89">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L90">			String sql = &quot;delete from reimbursement where reim_id = ?&quot;;</span>
+<span class="fc" id="L91">			PreparedStatement ps = conn.prepareStatement(sql);</span>
+<span class="fc" id="L92">			ps.setInt(1, i);</span>
+<span class="fc" id="L93">			int rs = ps.executeUpdate();</span>
+<span class="fc" id="L94">			ps.close();</span>
+
+<span class="pc bpc" id="L96" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L97">			log.error(&quot;Error while deleting reimbursement: &quot; + e.getMessage());</span>
+
+<span class="nc" id="L99">			e.printStackTrace();</span>
+<span class="fc" id="L100">		}</span>
+<span class="fc" id="L101">		return null;</span>
+	}
+
+	public String approveReimbursement(Integer reimbId, Integer userId) {
+<span class="pc" id="L105">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L106">			String sql = &quot;call approve_reimbursement(?, ?)&quot;;</span>
+<span class="fc" id="L107">			CallableStatement ps = conn.prepareCall(sql);</span>
+
+<span class="fc" id="L109">			ps.setInt(1, reimbId);</span>
+<span class="fc" id="L110">			ps.setInt(2, userId);</span>
+<span class="fc" id="L111">			int rs = ps.executeUpdate();</span>
+<span class="fc" id="L112">			ps.close();</span>
+
+<span class="pc bpc" id="L114" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L115">			log.error(&quot;Error while approving reimbursement: &quot; + e.getMessage());</span>
+
+<span class="nc" id="L117">			e.printStackTrace();</span>
+<span class="fc" id="L118">		}</span>
+<span class="fc" id="L119">		return null;</span>
+	}
+
+	public String denyReimbursement(Integer reimbId, Integer userId) {
+<span class="pc" id="L123">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L124">			String sql = &quot;call deny_reimbursement(?, ?)&quot;;</span>
+<span class="fc" id="L125">			CallableStatement ps = conn.prepareCall(sql);</span>
+<span class="fc" id="L126">			ps.setInt(1, reimbId);</span>
+<span class="fc" id="L127">			ps.setInt(2, userId);</span>
+<span class="fc" id="L128">			int rs = ps.executeUpdate();</span>
+<span class="fc" id="L129">			ps.close();</span>
+
+<span class="pc bpc" id="L131" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L132">			log.error(&quot;Error while denying reimbursement: &quot; + e.getMessage());</span>
+
+<span class="nc" id="L134">			e.printStackTrace();</span>
+<span class="fc" id="L135">		}</span>
+<span class="fc" id="L136">		return null;</span>
+	}
+
+	public List&lt;Reimbursement&gt; findReimsByUserId(Integer id) {
+<span class="fc" id="L140">		List&lt;Reimbursement&gt; reims = new LinkedList&lt;&gt;();</span>
+<span class="pc" id="L141">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L142">			String sql = &quot;select * from reimbursement where author_id = ?&quot;;</span>
+<span class="fc" id="L143">			PreparedStatement ps = conn.prepareStatement(sql);</span>
+
+<span class="fc" id="L145">			ps.setInt(1, id);</span>
+<span class="fc" id="L146">			ResultSet rs = ps.executeQuery();</span>
+<span class="fc bfc" id="L147" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L148">				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2),</span>
+<span class="fc" id="L149">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),</span>
+<span class="fc" id="L150">						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));</span>
+
+			}
+<span class="fc" id="L153">			rs.close();</span>
+<span class="fc" id="L154">			ps.close();</span>
+
+<span class="pc bpc" id="L156" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L157">			log.error(&quot;SQL exception for Reimbursements.findReimsByUserId: &quot; + e.getMessage());</span>
+<span class="nc" id="L158">			e.printStackTrace();</span>
+<span class="fc" id="L159">		}</span>
+<span class="fc" id="L160">		return reims;</span>
+
+	}
+
+	public List&lt;Reimbursement&gt; findCompleteReimbursements() {
+<span class="fc" id="L165">		List&lt;Reimbursement&gt; reims = new LinkedList&lt;&gt;();</span>
+<span class="pc" id="L166">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L167">			Statement s = conn.createStatement();</span>
+<span class="fc" id="L168">			String sql = &quot;select * from complete_reimbursement&quot;;</span>
+<span class="fc" id="L169">			ResultSet rs = s.executeQuery(sql);</span>
+<span class="fc bfc" id="L170" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L171">				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),</span>
+<span class="fc" id="L172">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),</span>
+<span class="fc" id="L173">						rs.getString(5), rs.getString(6), rs.getInt(7)));</span>
+			}
+<span class="fc" id="L175">			rs.close();</span>
+<span class="fc" id="L176">			s.close();</span>
+
+<span class="pc bpc" id="L178" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L179">			log.error(&quot;SQL exception for Reimbursements.findAll: &quot; + e.getMessage());</span>
+<span class="nc" id="L180">			e.printStackTrace();</span>
+<span class="fc" id="L181">		}</span>
+<span class="fc" id="L182">		return reims;</span>
+
+	}
+
+	public List&lt;Reimbursement&gt; findCompletePendingReims() {
+<span class="fc" id="L187">		List&lt;Reimbursement&gt; reims = new LinkedList&lt;&gt;();</span>
+<span class="pc" id="L188">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L189">			Statement s = conn.createStatement();</span>
+<span class="fc" id="L190">			String sql = &quot;select * from complete_reimbursement where status = 'pending'&quot;;</span>
+<span class="fc" id="L191">			ResultSet rs = s.executeQuery(sql);</span>
+<span class="fc bfc" id="L192" title="All 2 branches covered.">			while (rs.next()) {</span>
+<span class="fc" id="L193">				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),</span>
+<span class="fc" id="L194">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),</span>
+<span class="fc" id="L195">						rs.getString(5), rs.getString(6), rs.getInt(7)));</span>
+			}
+<span class="fc" id="L197">			rs.close();</span>
+<span class="fc" id="L198">			s.close();</span>
+
+<span class="pc bpc" id="L200" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L201">			log.error(&quot;SQL exception for Reimbursements.findAll: &quot; + e.getMessage());</span>
+<span class="nc" id="L202">			e.printStackTrace();</span>
+<span class="fc" id="L203">		}</span>
+<span class="fc" id="L204">		return reims;</span>
+
+	}
+
+	public List&lt;Reimbursement&gt; findReimsByUsername(String name) {
+<span class="fc" id="L209">		List&lt;Reimbursement&gt; reims = new LinkedList&lt;&gt;();</span>
+<span class="pc" id="L210">		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {</span>
+<span class="fc" id="L211">			String sql = &quot;select * from complete_reimbursement where username = ?&quot;;</span>
+<span class="fc" id="L212">			PreparedStatement ps = conn.prepareStatement(sql);</span>
+<span class="fc" id="L213">			ps.setString(1, name);</span>
+<span class="fc" id="L214">			ResultSet rs = ps.executeQuery();</span>
+<span class="pc bpc" id="L215" title="1 of 2 branches missed.">			while (rs.next()) {</span>
+<span class="nc" id="L216">				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),</span>
+<span class="nc" id="L217">						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),</span>
+<span class="nc" id="L218">						rs.getString(5), rs.getString(6), rs.getInt(7)));</span>
+			}
+<span class="fc" id="L220">			rs.close();</span>
+<span class="fc" id="L221">			ps.close();</span>
+
+<span class="pc bpc" id="L223" title="6 of 8 branches missed.">		} catch (SQLException e) {</span>
+<span class="nc" id="L224">			log.error(&quot;SQL exception for Reimbursements.findAll: &quot; + e.getMessage());</span>
+<span class="nc" id="L225">			e.printStackTrace();</span>
+<span class="fc" id="L226">		}</span>
+<span class="fc" id="L227">		return reims;</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

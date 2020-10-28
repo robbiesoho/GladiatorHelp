@@ -152,3 +152,6 @@ Error while creating user: ERROR: duplicate key value violates unique constraint
 Reimbursement createdcom.web.model.Reimbursement@138a7441
 Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
   Detail: Key (username)=(validUser) already exists.
+Reimbursement createdcom.web.model.Reimbursement@2b19b346
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.

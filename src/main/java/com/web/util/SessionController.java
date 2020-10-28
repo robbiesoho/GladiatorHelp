@@ -16,6 +16,7 @@ public class SessionController {
 		return (User) req.getSession().getAttribute("user");
 	}
 
+//	better to store user objects in sessions
 	public void setSessionUsername(HttpServletRequest req, String str) {
 		HttpSession session = req.getSession();
 		session.setAttribute("username", str);
@@ -25,6 +26,7 @@ public class SessionController {
 		return (String) req.getSession().getAttribute("username");
 	}
 
+//	storing user objects in sessions protects passwords. This way is not secure
 	public void setSessionPassword(HttpServletRequest req, String str) {
 		HttpSession session = req.getSession();
 		session.setAttribute("password", str);

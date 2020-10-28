@@ -83,6 +83,7 @@ public class UserController {
 
 	public String logout(HttpServletRequest req) {
 		sc.invalidate(req);
+//		takes us to the home page
 		return "asd.page";
 	}
 

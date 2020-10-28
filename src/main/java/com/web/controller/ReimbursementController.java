@@ -29,6 +29,7 @@ public class ReimbursementController {
 
 	}
 
+//	This would normally go in the user controller
 	public int getIdFromUsername(String name) {
 		User user = udao.findByName(name);
 		return user.getId();

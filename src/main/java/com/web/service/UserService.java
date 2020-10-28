@@ -9,7 +9,6 @@ import com.web.util.MD5Utils;
 
 public class UserService {
 	private static final Charset UTF_8 = StandardCharsets.UTF_8;
-	private static final String OUTPUT_FORMAT = "%-20s:%s";
 
 	private UserDao udao;
 
