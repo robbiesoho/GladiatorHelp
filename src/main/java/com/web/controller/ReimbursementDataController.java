@@ -6,14 +6,18 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.web.model.Reimbursement;
+import com.web.repo.UserDao;
 import com.web.service.ReimbursementService;
 import com.web.util.SessionController;
 
 public class ReimbursementDataController {
 	private ReimbursementService rs;
 	SessionController sc = new SessionController();
+	static Logger log = Logger.getLogger(UserDao.class);
 
 	public ReimbursementDataController(ReimbursementService rs, SessionController sc) {
 		super();
@@ -31,6 +35,8 @@ public class ReimbursementDataController {
 		try {
 			res.getWriter().println(new ObjectMapper().writeValueAsString(reimbursements));
 		} catch (IOException e) {
+			log.error("IO exception for sendAllData -> " + e.getMessage());
+
 		}
 	}
 
@@ -49,6 +55,8 @@ public class ReimbursementDataController {
 		try {
 			res.getWriter().println(new ObjectMapper().writeValueAsString(reims));
 		} catch (IOException e) {
+			log.error("IO exception for sendCompleteReims -> " + e.getMessage());
+
 		}
 	}
 
@@ -58,6 +66,8 @@ public class ReimbursementDataController {
 		try {
 			res.getWriter().println(new ObjectMapper().writeValueAsString(username));
 		} catch (IOException e) {
+			log.error("IO exception for sendSessionName -> " + e.getMessage());
+
 		}
 	}
 

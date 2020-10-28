@@ -14,15 +14,22 @@
 </head>
 
 <body>
-<p>Welcome Please login</p>
+<h2 id="welcome">Welcome To Gladiator Help.com!</h2>
 
-   <form action="login.page" method="POST">
-      <input type="text" placeholder="username" name="username" />
-      <input type="password" placeholder="password" name="password" />
-      <input type="submit" value="login">
+<div id="login-div"></div>
+<p>Please login</p>
+
+   <form action="login.page" id = "login-form" method="POST">
+      <label for="username">Username: </label><br>
+      <input class="form-control" type="text" placeholder="username" name="username" />
+      <label for="password">Password: </label><br>
+      <input class="form-control" type="password" placeholder="password" name="password" />
+      <button type="submit" class="btn btn-primary" value="login">Submit</button>
     </form>
 <a href="https://ibb.co/ygRdXwL"><img src="https://i.ibb.co/nQ06bHh/glad.jpg" alt="glad" border="0"></a>
 
+</div>
+   
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script></body>

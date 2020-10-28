@@ -126,7 +126,19 @@ public class Reimbursement {
 		this.typeId = typeId;
 	}
 
-//	need a constructor iwth byte[]
+	public Reimbursement(int id, int amount, String submitted, String description, int authorId, int resolverId,
+			int statusId, int typeId) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.submitted = submitted;
+		this.description = description;
+		this.authorId = authorId;
+		this.resolverId = resolverId;
+		this.statusId = statusId;
+		this.typeId = typeId;
+	}
+
 	public Reimbursement(int amount, String description, int authorId, int statusId, int typeId) {
 		super();
 		this.amount = amount;
@@ -153,6 +165,22 @@ public class Reimbursement {
 
 	}
 
+	public Reimbursement(int id, String username, String submitted, String description, String status, String type,
+			int amount, int authorId, int statusId, int typeId) {
+		super();
+		this.id = id;
+		this.setUsername(username);
+		this.submitted = submitted;
+		this.description = description;
+		this.status = status;
+		this.type = type;
+		this.amount = amount;
+		this.authorId = authorId;
+		this.statusId = statusId;
+		this.typeId = typeId;
+
+	}
+
 	public Reimbursement(String username, String description, String status, int amount) {
 		super();
 		this.setUsername(username);
@@ -169,6 +197,14 @@ public class Reimbursement {
 		this.description = description;
 		this.typeId = typeId;
 		this.statusId = statusId;
+
+	}
+
+	public Reimbursement(String type, String status, String username) {
+		super();
+		this.type = type;
+		this.status = status;
+		this.username = username;
 
 	}
 

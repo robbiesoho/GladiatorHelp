@@ -6,7 +6,6 @@ import com.web.model.Reimbursement;
 import com.web.repo.ReimbursementDao;
 
 public class ReimbursementService {
-//	private DaoContract<Reimbursement, Integer> rdao;
 	private ReimbursementDao rdao;
 
 	public ReimbursementService(ReimbursementDao rdao) {

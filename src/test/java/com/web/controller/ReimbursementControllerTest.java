@@ -34,5 +34,25 @@ public class ReimbursementControllerTest {
 		int id = rc.getIdFromUsername("name");
 		assertEquals(id, 1);
 	}
+//	@Test
+//	public void testGoToNewClaimPage() {
+//		Mockito.when(rc.findByName("name")).thenReturn(new User(1));
+//		int id = rc.getIdFromUsername("name");
+//		assertEquals(id, 1);
+//	}
+
+//	@Test
+//	public void testCreate() {
+//		Mockito.when(rc.)).thenReturn(new User(1));
+//		int id = rc.getIdFromUsername("name");
+//		assertEquals(id, 1);
+//	}
+//	
+//	@Test
+//	public void testCreate() {
+//		Mockito.when(rc.)).thenReturn(new User(1));
+//		int id = rc.getIdFromUsername("name");
+//		assertEquals(id, 1);
+//	}
 
 }

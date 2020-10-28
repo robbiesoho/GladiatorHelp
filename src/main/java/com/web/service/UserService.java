@@ -11,10 +11,7 @@ public class UserService {
 	private static final Charset UTF_8 = StandardCharsets.UTF_8;
 	private static final String OUTPUT_FORMAT = "%-20s:%s";
 
-//	private DaoContract<User, Integer> udao;
 	private UserDao udao;
-
-//	private MD5Utils md5;
 
 	public UserService(UserDao udao) {
 		super();
@@ -47,8 +44,9 @@ public class UserService {
 
 	}
 
-	public void create(User user) {
+	public String create(User user) {
 		udao.create(user);
+		return null;
 	}
 
 }

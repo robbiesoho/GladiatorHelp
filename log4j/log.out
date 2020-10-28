@@ -110,3 +110,34 @@ SQL exception for User.findByName: The connection attempt failed.
 SQL exception for User.findByName: The connection attempt failed.
 27-10-2020 20:46:21 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
 SQL exception for Reimbursements.findAll: The connection attempt failed.
+USer createdcom.web.model.User@2b50150
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@28f8e165
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@420745d7
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@41c62850
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@4163f1cd
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating reimbursement: ERROR: insert or update on table "reimbursement" violates foreign key constraint "reimbursement_author_id_fkey"
+  Detail: Key (author_id)=(0) is not present in table "user_acc".
+Error while creating reimbursement: ERROR: insert or update on table "reimbursement" violates foreign key constraint "reimbursement_author_id_fkey"
+  Detail: Key (author_id)=(0) is not present in table "user_acc".
+Error while creating reimbursement: ERROR: insert or update on table "reimbursement" violates foreign key constraint "reimbursement_status_id_fkey"
+  Detail: Key (status_id)=(0) is not present in table "reimbursement_status".
+Error while creating reimbursement: ERROR: insert or update on table "reimbursement" violates foreign key constraint "reimbursement_type_id_fkey"
+  Detail: Key (type_id)=(0) is not present in table "reimbursement_type".
+Reimbursement createdcom.web.model.Reimbursement@68ace111
+Reimbursement createdcom.web.model.Reimbursement@595f4da5
+Reimbursement createdcom.web.model.Reimbursement@328572f0
+Reimbursement createdcom.web.model.Reimbursement@70d8de
