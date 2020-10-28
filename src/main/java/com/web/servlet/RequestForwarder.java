@@ -41,25 +41,44 @@ public class RequestForwarder {
 			return new UserController().goToUserMain(req);
 		case "/Project1/managerMain.page":
 			return new UserController().goToManagerMain(req);
-
-//		case "/Project1/logout.page":
-//			return new UserController().goToManagerMain(req);
-
+		case "/Project1/logout.page":
+			return new UserController().logout(req);
 		default:
 			return "html/login.html";
 		}
 
-//		case "/Project1-0.0.1-SNAPSHOT/login.page":
-//			return new UserController().login(req);
-//		case "/Project1-0.0.1-SNAPSHOT/newclaim.page":
-//			return new ReimbursementController().goToNewClaimPage(req);
-//		case "/Project1-0.0.1-SNAPSHOT/submitclaim.page":
-//			return new ReimbursementController().create(req);
-//		case "/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page":
-//			return new ReimbursementController().delete(req);
-//		default:
-//			return "html/login.html";
-//		}
+//	case "/Project1-0.0.1-SNAPSHOT/login.page":
+//		sc.setSessionUsername(req, req.getParameter("username"));
+//		sc.setSessionPassword(req, req.getParameter("password"));
+//		return new UserController().login(req);
+//	case "/Project1-0.0.1-SNAPSHOT/newclaim.page":
+//		return new ReimbursementController().goToNewClaimPage(req);
+//	case "/Project1-0.0.1-SNAPSHOT/submitclaim.page":
+//		return new ReimbursementController().create(req);
+//	case "/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page":
+//		return new ReimbursementController().delete(req);
+//	case "/Project1-0.0.1-SNAPSHOT/allReimbursements.page":
+//		return new ReimbursementController().goToAllReimPage(req);
+//	case "/Project1-0.0.1-SNAPSHOT/pendingReimbursements.page":
+//		return new ReimbursementController().goToPendingReimPage(req);
+//	case "/Project1-0.0.1-SNAPSHOT/approveReimbursement.page":
+//		return new ReimbursementController().approve(req);
+//	case "/Project1-0.0.1-SNAPSHOT/denyReimbursement.page":
+//		return new ReimbursementController().deny(req);
+//	case "/Project1-0.0.1-SNAPSHOT/newUser.page":
+//		return new UserController().goToNewUserPage(req);
+//	case "/Project1-0.0.1-SNAPSHOT/submitNewUser.page":
+//		return new UserController().create(req);
+//	case "/Project1-0.0.1-SNAPSHOT/userMain.page":
+//		return new UserController().goToUserMain(req);
+//	case "/Project1-0.0.1-SNAPSHOT/managerMain.page":
+//		return new UserController().goToManagerMain(req);
+//	case "/Project1-0.0.1-SNAPSHOT/logout.page":
+//		return new UserController().logout(req);
+//	default:
+//		return "html/login.html";
+//	}
+
 	}
 
 	public void data(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -92,15 +111,11 @@ public class RequestForwarder {
 //		case "/Project1-0.0.1-SNAPSHOT/pending.json":
 //			new ReimbursementDataController().sendCompletePendingReimbursements(res);
 //			break;
-
-//		case "/Project1/pending.json":
-//			new ReimbursementDataController().sendCompletePendingReimbursements(res);
+//			
+//		case "/Project1-0.0.1-SNAPSHOT/session.json":
+//			new ReimbursementDataController().sendSessionName(res, req);
 //			break;
 
-//		case "/HallowsMonsters/monster.json":
-//			new SaveController().save(req, res);
-//			break;
-//		}
 		}
 	}
 }

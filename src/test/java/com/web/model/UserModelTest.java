@@ -7,7 +7,7 @@ public class UserModelTest {
 //	public void setup() {
 //		User user = new User();
 //	}
-
+//
 //	@Test
 //	public void findAllTest() {
 //		List<User> users = um.findAll();

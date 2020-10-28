@@ -37,6 +37,12 @@ public class User {
 
 	}
 
+	public User(int id) {
+		super();
+		this.id = id;
+
+	}
+
 	public User() {
 		super();
 

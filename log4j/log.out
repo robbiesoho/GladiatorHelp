@@ -92,3 +92,21 @@ Reimbursement createdcom.web.model.Reimbursement@1d574c11
 27-10-2020 09:40:44 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
 27-10-2020 19:51:59 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
 Reimbursement createdcom.web.model.Reimbursement@7cf728ab
+Reimbursement createdcom.web.model.Reimbursement@709c5164
+Reimbursement createdcom.web.model.Reimbursement@38339c44
+Reimbursement createdcom.web.model.Reimbursement@25e76956
+Reimbursement createdcom.web.model.Reimbursement@4f9a3bb7
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_email_key"
+  Detail: Key (email)=(asdf@asdf.com) already exists.
+27-10-2020 20:08:48 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+27-10-2020 20:08:54 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+USer createdcom.web.model.User@6735cdf8
+Reimbursement createdcom.web.model.Reimbursement@39f5dfb1
+Reimbursement createdcom.web.model.Reimbursement@b630e98
+SQL exception for User.findByName: The connection attempt failed.
+27-10-2020 20:46:09 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+SQL exception for User.findByName: The connection attempt failed.
+27-10-2020 20:46:16 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+SQL exception for User.findByName: The connection attempt failed.
+27-10-2020 20:46:21 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+SQL exception for Reimbursements.findAll: The connection attempt failed.

@@ -30,8 +30,6 @@ public class UserController {
 
 	public String login(HttpServletRequest req) {
 
-//		String username = req.getParameter("username");
-//		String password = req.getParameter("password");
 		String username = sc.getSessionUsername(req);
 		String password = sc.getSessionPassword(req);
 
@@ -39,11 +37,9 @@ public class UserController {
 			if (us.validateCredentials(username, password)) {
 
 				if (us.isManager(username)) {
-//					return "html/manager/main.html";
 					return goToManagerMain(req);
 
 				} else {
-//					return "html/gladiator/main.html";
 					return goToUserMain(req);
 				}
 			} else {
@@ -83,6 +79,11 @@ public class UserController {
 		us.create(user);
 
 		return "html/manager/main.html";
+	}
+
+	public String logout(HttpServletRequest req) {
+		sc.invalidate(req);
+		return "asd.page";
 	}
 
 }

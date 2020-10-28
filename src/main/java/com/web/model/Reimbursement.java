@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Reimbursement {
 	private int id;
 	private int amount;
-	private LocalDateTime submitted;
+	private String submitted;
 	private LocalDateTime resolved;
 	private String description;
 	private byte[] reciept;
@@ -33,11 +33,11 @@ public class Reimbursement {
 		this.amount = amount;
 	}
 
-	public LocalDateTime getSubmitted() {
+	public String getSubmitted() {
 		return submitted;
 	}
 
-	public void setSubmitted(LocalDateTime submitted) {
+	public void setSubmitted(String submitted) {
 		this.submitted = submitted;
 	}
 
@@ -97,7 +97,7 @@ public class Reimbursement {
 		this.typeId = typeId;
 	}
 
-	public Reimbursement(int id, int amount, LocalDateTime submitted, LocalDateTime resolved, String description,
+	public Reimbursement(int id, int amount, String submitted, LocalDateTime resolved, String description,
 			byte[] reciept, int authorId, int resolverId, int statusId, int typeId) {
 		super();
 		this.id = id;
@@ -112,7 +112,7 @@ public class Reimbursement {
 		this.typeId = typeId;
 	}
 
-	public Reimbursement(int id, int amount, LocalDateTime submitted, String description, byte[] reciept, int authorId,
+	public Reimbursement(int id, int amount, String submitted, String description, byte[] reciept, int authorId,
 			int resolverId, int statusId, int typeId) {
 		super();
 		this.id = id;
@@ -140,8 +140,8 @@ public class Reimbursement {
 		super();
 	}
 
-	public Reimbursement(int id, String username, LocalDateTime submitted, String description, String status,
-			String type, int amount) {
+	public Reimbursement(int id, String username, String submitted, String description, String status, String type,
+			int amount) {
 		super();
 		this.id = id;
 		this.setUsername(username);

@@ -1,6 +1,5 @@
 package com.web.controller;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import com.web.model.Reimbursement;
@@ -38,7 +37,6 @@ public class ReimbursementController {
 	public String create(HttpServletRequest req) {
 
 		String username = req.getParameter("username");
-//		System.out.println(req.getParameter("password"));
 		int userId = getIdFromUsername(username);
 		int amount = Integer.parseInt(req.getParameter("amount"));
 		String description = req.getParameter("description");
@@ -59,8 +57,6 @@ public class ReimbursementController {
 		rs.delete(id);
 		UserController uc = new UserController();
 		return uc.goToUserMain(req);
-//		return "asd.page";
-//		return "html/gladiator/main.html";
 	}
 
 	public String goToAllReimPage(HttpServletRequest req) {
@@ -73,25 +69,17 @@ public class ReimbursementController {
 	}
 
 	public String approve(HttpServletRequest req) {
-		String managerName = null;
-		Cookie[] cookies = req.getCookies();
-		for (Cookie c : cookies) {
-			managerName = c.getValue();
-		}
-		System.out.println(req.getParameter("id"));
+		String managerName = sc.getSessionUsername(req);
+
 		int userId = getIdFromUsername(managerName);
 		int reimId = Integer.parseInt(req.getParameter("id"));
-		System.out.println(reimId);
 		rs.approve(reimId, userId);
 		return "html/manager/pendingReimbursements.html";
 	}
 
 	public String deny(HttpServletRequest req) {
-		String managerName = null;
-		Cookie[] cookies = req.getCookies();
-		for (Cookie c : cookies) {
-			managerName = c.getValue();
-		}
+		String managerName = sc.getSessionUsername(req);
+
 		int userId = getIdFromUsername(managerName);
 		int reimId = Integer.parseInt(req.getParameter("id"));
 		rs.deny(reimId, userId);

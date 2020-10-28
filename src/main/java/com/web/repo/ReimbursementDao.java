@@ -1,5 +1,6 @@
 package com.web.repo;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,12 +17,6 @@ import com.web.util.ConnectionUtil;
 public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	static Logger log = Logger.getLogger(UserDao.class);
 
-//	public static void main(String[] args) {
-//		ReimbursementDao rd = new ReimbursementDao();
-//		System.out.println(rd.findReimsByUsername("go4it"));
-//
-//	}
-
 	@Override
 	public List<Reimbursement> findAll() {
 		List<Reimbursement> reims = new LinkedList<>();
@@ -31,8 +26,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			ResultSet rs = s.executeQuery(sql);
 
 			while (rs.next()) {
-				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(5), rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),
+						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));
 
 			}
 			rs.close();
@@ -55,8 +51,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			ps.setInt(1, i);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				reimb = new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(5), rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10));
+				reimb = new Reimbursement(rs.getInt(1), rs.getInt(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),
+						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10));
 			}
 			ps.close();
 			rs.close();
@@ -116,11 +113,11 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return null;
 	}
 
-//	callable vs prepared
 	public String approveReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call approve_reimbursement(?, ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			CallableStatement ps = conn.prepareCall(sql);
+
 			ps.setInt(1, reimbId);
 			ps.setInt(2, userId);
 			int rs = ps.executeUpdate();
@@ -137,7 +134,8 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	public String denyReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call deny_reimbursement(?, ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			CallableStatement ps = conn.prepareCall(sql);
+//			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, reimbId);
 			ps.setInt(2, userId);
 			int rs = ps.executeUpdate();
@@ -160,8 +158,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(5), rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getInt(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(5),
+						rs.getBytes(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10)));
 
 			}
 			rs.close();
@@ -182,9 +181,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			String sql = "select * from complete_reimbursement";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
-//				System.out.println(rs.getString(2));
-				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getInt(7)));
 			}
 			rs.close();
 			s.close();
@@ -204,14 +203,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			String sql = "select * from complete_reimbursement where status = 'pending'";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
-//				System.out.println(rs.getInt(1));
-//				System.out.println(rs.getString(2));
-//				System.out.println(rs.getString(4));
-//				System.out.println(rs.getString(5));
-//				System.out.println(rs.getString(6));
-//				System.out.println(rs.getString(7));
-				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getInt(7)));
 			}
 			rs.close();
 			s.close();
@@ -232,8 +226,9 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2), rs.getTimestamp(3).toLocalDateTime(),
-						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
+				reims.add(new Reimbursement(rs.getInt(1), rs.getString(2),
+						rs.getTimestamp(3).toLocalDateTime().toString().substring(0, 10), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getInt(7)));
 			}
 			rs.close();
 			ps.close();
