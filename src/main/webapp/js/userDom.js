@@ -4,6 +4,25 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
+// let username = fetchUserName("http://localhost:8080/Project1/session.json");
+// async function fetchUserName() {
+//   // const response = await fetch(url);
+//   // const json = await response.json();
+
+//   fetch("http://localhost:8080/Project1/session.json")
+//     .then((response) => response.json())
+//     .then((json) => {
+//       console.log(json);
+//     });
+// }
+// const response = await fetch("http://localhost:8080/Project1/session.json");
+// username = fetchUserName("http://localhost:8080/Project1/session.json");
+
+// console.log(fetchUserName("http://localhost:8080/Project1/session.json"));
+
+// console.log(username);
+// document.getElementById("userInput").value = username;
+
 function renderObjTable(r) {
   const tr = document.createElement("tr");
   const dateSubmitTd = document.createElement("td");
@@ -32,10 +51,7 @@ function renderObjTable(r) {
   deleteButton.value = r.id;
   deleteButton.name = "id";
   deleteButton.innerText = "delete";
-  // setCookie("username", r.username);
-
-  // deleteForm.action = "deleteReimbursement.page";
-  // deleteForm.appendChild(deleteButtonBox);
+  deleteButton.id = "deletebtn";
 
   tr.append(
     dateSubmitTd,
@@ -49,12 +65,17 @@ function renderObjTable(r) {
   document.getElementById("userReimBody").append(tr);
 }
 
-const username = getCookie("username");
-// setCookie("username", r.username);
+// document.getElementById("welcome-top").innerText = "Welcome " + username;
 
-// const password = getCookie("password");
-
-document.getElementById("welcome-top").innerText = "Welcome " + username;
+// fetch("http://localhost:8080/Project1/session.json")
+//   .then((response) => response.json())
+//   .then((json) => {
+//     username = json;
+//   })
+//   .then((e) => {
+//     document.getElementById("welcome-top").innerText = "Welcome " + username;
+//     fetchUserData(username, "http://localhost:8080/Project1/complete.json");
+//   });
 
 async function fetchUserData(name, url) {
   const response = await fetch(url);
@@ -66,4 +87,13 @@ async function fetchUserData(name, url) {
   }
 }
 
-fetchUserData(username, "http://localhost:8080/Project1/complete.json");
+let username = null;
+fetch("http://localhost:8080/Project1/session.json")
+  .then((response) => response.json())
+  .then((json) => {
+    username = json;
+  })
+  .then((e) => {
+    document.getElementById("welcome-top").innerText = "Welcome " + username;
+    fetchUserData(username, "http://localhost:8080/Project1/complete.json");
+  });

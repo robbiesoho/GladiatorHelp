@@ -117,7 +117,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	}
 
 //	callable vs prepared
-	public int approveReimbursement(Integer reimbId, Integer userId) {
+	public String approveReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call approve_reimbursement(?, ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -131,10 +131,10 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 			e.printStackTrace();
 		}
-		return 1;
+		return null;
 	}
 
-	public int denyReimbursement(Integer reimbId, Integer userId) {
+	public String denyReimbursement(Integer reimbId, Integer userId) {
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			String sql = "call deny_reimbursement(?, ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -148,7 +148,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 			e.printStackTrace();
 		}
-		return 1;
+		return null;
 	}
 
 	public List<Reimbursement> findReimsByUserId(Integer id) {

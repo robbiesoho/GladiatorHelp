@@ -45,4 +45,15 @@ public class ReimbursementService {
 	public String delete(int id) {
 		return rdao.delete(id);
 	}
+
+	public String approve(int reimId, int userId) {
+
+		return rdao.approveReimbursement(reimId, userId);
+
+	}
+
+	public String deny(int reimId, int userId) {
+		return rdao.denyReimbursement(reimId, userId);
+
+	}
 }

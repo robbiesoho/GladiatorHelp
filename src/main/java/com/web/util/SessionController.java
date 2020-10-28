@@ -16,6 +16,24 @@ public class SessionController {
 		return (User) req.getSession().getAttribute("user");
 	}
 
+	public void setSessionUsername(HttpServletRequest req, String str) {
+		HttpSession session = req.getSession();
+		session.setAttribute("username", str);
+	}
+
+	public String getSessionUsername(HttpServletRequest req) {
+		return (String) req.getSession().getAttribute("username");
+	}
+
+	public void setSessionPassword(HttpServletRequest req, String str) {
+		HttpSession session = req.getSession();
+		session.setAttribute("password", str);
+	}
+
+	public String getSessionPassword(HttpServletRequest req) {
+		return (String) req.getSession().getAttribute("password");
+	}
+
 	public void invalidate(HttpServletRequest req) {
 		req.getSession().invalidate();
 	}

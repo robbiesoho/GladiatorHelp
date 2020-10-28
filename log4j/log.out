@@ -55,3 +55,40 @@ Reimbursement createdcom.web.model.Reimbursement@3f48f795
 Reimbursement createdcom.web.model.Reimbursement@7d120cc3
 Reimbursement createdcom.web.model.Reimbursement@7813d1ab
 25-10-2020 19:54:37 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@312a745e
+USer createdcom.web.model.User@ad59e2d
+26-10-2020 12:41:48 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+26-10-2020 19:46:59 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+26-10-2020 20:03:31 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@65d077f8
+Reimbursement createdcom.web.model.Reimbursement@6ee6d846
+26-10-2020 20:33:44 --- exception loggin in user ---Cannot invoke "com.web.model.User.getPassword()" because "user" is null
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_email_key"
+  Detail: Key (email)=(asdf@asdf.com) already exists.
+Reimbursement createdcom.web.model.Reimbursement@1fbf901e
+Reimbursement createdcom.web.model.Reimbursement@465ef2ef
+Reimbursement createdcom.web.model.Reimbursement@68d8acac
+Reimbursement createdcom.web.model.Reimbursement@137a8c24
+Reimbursement createdcom.web.model.Reimbursement@7927a26a
+USer createdcom.web.model.User@6f1c2976
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(rob) already exists.
+26-10-2020 21:51:03 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@466dde82
+26-10-2020 21:55:27 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@485a2edd
+USer createdcom.web.model.User@1f3f88e0
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(qqqq) already exists.
+Reimbursement createdcom.web.model.Reimbursement@49700c31
+Reimbursement createdcom.web.model.Reimbursement@6c4368ac
+Reimbursement createdcom.web.model.Reimbursement@417d6a8c
+Reimbursement createdcom.web.model.Reimbursement@3f4c1e1f
+Reimbursement createdcom.web.model.Reimbursement@783f6ffc
+Reimbursement createdcom.web.model.Reimbursement@b619c94
+Reimbursement createdcom.web.model.Reimbursement@1d574c11
+27-10-2020 09:38:07 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+27-10-2020 09:39:16 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+27-10-2020 09:40:44 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+27-10-2020 19:51:59 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@7cf728ab

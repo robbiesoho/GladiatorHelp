@@ -6,18 +6,38 @@ function renderPendingTable(reimbursements) {
     const descriptionTd = document.createElement("td");
     const typeTd = document.createElement("td");
     const amountTd = document.createElement("td");
+
+    const approveForm = document.createElement("form");
     const approveBox = document.createElement("td");
     const approveButton = document.createElement("button");
-    approveBox.appendChild(approveButton);
+
+    approveBox.appendChild(approveForm);
+    approveForm.appendChild(approveButton);
+
+    const denyForm = document.createElement("form");
     const denyBox = document.createElement("td");
     const denyButton = document.createElement("button");
-    denyBox.appendChild(denyButton);
+
+    denyBox.appendChild(denyForm);
+    denyForm.appendChild(denyButton);
 
     usernameTd.innerText = r.username;
     dateSubmitTd.innerText = r.submitted;
     descriptionTd.innerText = r.description;
     typeTd.innerText = r.type;
     amountTd.innerText = r.amount;
+
+    approveForm.type = "submit";
+    approveForm.action = "approveReimbursement.page";
+    approveForm.method = "POST";
+    approveButton.name = "id";
+    approveButton.value = r.id;
+
+    denyForm.type = "submit";
+    denyForm.action = "denyReimbursement.page";
+    denyForm.method = "POST";
+    denyButton.name = "id";
+    denyButton.value = r.id;
 
     approveButton.innerText = "approve";
     denyButton.innerText = "deny";
