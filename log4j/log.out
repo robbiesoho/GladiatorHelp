@@ -141,3 +141,14 @@ Reimbursement createdcom.web.model.Reimbursement@68ace111
 Reimbursement createdcom.web.model.Reimbursement@595f4da5
 Reimbursement createdcom.web.model.Reimbursement@328572f0
 Reimbursement createdcom.web.model.Reimbursement@70d8de
+Reimbursement createdcom.web.model.Reimbursement@5a865416
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Reimbursement createdcom.web.model.Reimbursement@78c7f9b3
+USer createdcom.web.model.User@333cb916
+Reimbursement createdcom.web.model.Reimbursement@294bdeb4
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Reimbursement createdcom.web.model.Reimbursement@138a7441
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.

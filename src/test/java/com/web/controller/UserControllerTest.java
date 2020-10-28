@@ -1,12 +1,9 @@
 package com.web.controller;
 
-import static org.junit.Assert.assertEquals;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.web.model.User;
@@ -28,11 +25,11 @@ public class UserControllerTest {
 		testUser = new User(101, "validUser", "validPass", "validFirst", "validLast", "validEmail", 1);
 	}
 
-	@Test
-	public void loginTest() {
-		Mockito.when(uc.login(req)).thenReturn("1");
-		assertEquals(uc.login(req), "1");
-
-	}
+//	@Test
+//	public void loginTest() {
+//		Mockito.when(uc.login(req)).thenReturn("1");
+//		assertEquals(uc.login(req), "1");
+//
+//	}
 
 }

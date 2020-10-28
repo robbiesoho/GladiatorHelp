@@ -34,12 +34,12 @@ public class UserDaoTest {
 		assertEquals(u.getId(), 101);
 	}
 
-	@Test
-	public void createUserTest() {
-		Mockito.when(ud.create(testUser)).thenReturn("1");
-		String str = ud.create(testUser);
-		assertNotNull(str);
-	}
+//	@Test
+//	public void createUserTest() {
+//		Mockito.when(ud.create(testUser)).thenReturn("1");
+//		String str = ud.create(testUser);
+//		assertNotNull(str);
+//	}
 
 	@Test
 	public void deleteUserTest() {
