@@ -53,54 +53,14 @@ function renderPendingTable(reimbursements) {
   }
 }
 
-// const reimbursements = [];
-
 async function asyncFetch(url, expression) {
   const response = await fetch(url);
   const json = await response.json();
   expression(json);
 }
 
-asyncFetch("http://localhost:8080/Project1/complete.json", renderPendingTable);
-
-// fetch("http://localhost:8080/Project1/compelete.json", {
-//   body: JSON.stringify(reimbursements),
-//   method: "post",
-//   mode: "no-cors",
-//   headers: {
-//     origin: "localhost",
-//   },
-// })
-//   .then((r) => r.json())
-//   .then(reimbursements.push);
-
-// fetch("http://localhost:8080/HallowsMonsters/all.json", {
-//   body: JSON.stringify(mockedMonsters),
-//   method: "post",
-//   mode: "no-cors",
-//   headers: {
-//     origin:'localhost'
-//   }
-// })
-//   .then((r) => r.json())
-//   .then(mockedMonsters.push);
-
-//   async function addMonster() {
-//     const monster = {
-//       name: document.getElementById("monName").value,
-//       type: {
-//         type: document.getElementById("monType").value,
-//         furry: document.getElementById("monFur").value,
-//         paws: document.getElementById("monPaws").value,
-//       },
-//     };
-//     const fetched = await fetch("http://localhost:8080/Project1/compelete.json", {
-//       method: "post",
-//       body: JSON.stringify(monster),
-//     });
-//     const json = await fetched.text();
-//     const rows = (document.getElementById("hallowsTableBody").innerHTML = "");
-//     asyncFetch("http://localhost:8080/Project1/compelete.json", renderTable);
-//   }
-
-//   document.getElementById("monSubmit").addEventListener("click", addMonster);
+// asyncFetch("http://localhost:8080/Project1/complete.json", renderPendingTable);
+asyncFetch(
+  "http://3.17.110.130:8081/Project1-0.0.1-SNAPSHOT/complete.json",
+  renderPendingTable
+);
