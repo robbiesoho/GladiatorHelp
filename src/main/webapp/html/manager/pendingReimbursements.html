@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <script defer src="../js/dom.js"></script>   -->
 
-          <!--this will defer the loading of the page until the dom has rendered -->
+    <!--this will defer the loading of the page until the dom has rendered -->
     <!-- <script>
       console.log("js inside the html!!! woohoo!!!");
       function clicked() {
@@ -23,30 +23,29 @@
     />
   </head>
   <body>
-    <!-- <button onclick="printTheEventObject(event)">this is a button</button>
-    <input
-      value="username"
-      type="submit"
-      onclick="this.value=prompt('enter username')"
-    /> -->
-	<div>
-	<table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">user</th>
-          <th scope="col">submitted</th>
-          <th scope="col">description</th>
-          <th scope="col">type</th>
-          <th scope="col">amount</th>
-        </tr>
-      </thead>
-      <tbody id="completeReimBody"></tbody>
-    </table>
-	</div>
-    
-  <br><a href="managerMain.page">Back to Main Menu</a>
-  <br><a href="logout.page">Logout</a>
-  <script
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+      <a class="navbar-brand" href="managerMain.page">Back to Main Menu</a>
+      <a class="navbar-brand" href="logout.page">Logout</a>
+    </nav>
+    <h1 class="welcome">Pending Reimbursements</h1>
+
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">user</th>
+            <th scope="col">submitted</th>
+            <th scope="col">description</th>
+            <th scope="col">type</th>
+            <th scope="col">amount</th>
+          </tr>
+        </thead>
+        <tbody id="completeReimBody"></tbody>
+      </table>
+    </div>
+
+    <br />
+    <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"

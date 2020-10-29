@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Manager page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <link rel="stylesheet" href="././css/style.css" />
 
     <link
       rel="stylesheet"
@@ -15,15 +15,24 @@
     />
   </head>
   <body>
-    <h1>Welcome manager</h1>
-    <h3>What would you like to do?</h3>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+      <a class="navbar-brand" href="logout.page">Logout</a>
+    </nav>
 
-    <a href="allReimbursements.page">View all reimbursements</a><br>
-    <a href="pendingReimbursements.page">View all pending reimbursements</a><br>
-    <a href="newUser.page">Create new gladiator account</a><br>
-     
-    <br><a href="logout.page">Logout</a>
+    <h1 id="welcome-man-top">Welcome ..get back to work!</h1>
+    <h3 id="man-main-ques">What would you like to do?</h3>
 
+    <div id="links-div">
+      <a class="btn btn-dark" href="allReimbursements.page"
+        >View all reimbursements</a
+      ><br />
+      <a class="btn btn-dark" href="pendingReimbursements.page"
+        >View all pending reimbursements</a
+      ><br />
+      <a class="btn btn-dark" href="newUser.page"
+        >Create new gladiator account</a
+      ><br />
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -35,6 +44,6 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="././js/manageMainDom.js"></script>
+    <!-- <script src="././js/manageMainDom.js"></script> -->
   </body>
 </html>

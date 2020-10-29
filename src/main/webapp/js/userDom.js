@@ -58,7 +58,10 @@ fetch("http://localhost:8080/Project1/session.json")
     username = json;
   })
   .then((e) => {
-    document.getElementById("welcome-top").innerText = "Welcome " + username;
+    const welcome = document.getElementById("welcome-top");
+    welcome.innerText = "Welcome " + username;
+    welcome.style.display = "flex";
+    welcome.style.justifyContent = "center";
     fetchUserData(username, "http://localhost:8080/Project1/complete.json");
     // fetchUserData(
     //   username,

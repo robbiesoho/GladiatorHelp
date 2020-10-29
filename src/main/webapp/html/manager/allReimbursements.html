@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <script defer src="../js/dom.js"></script>   -->
 
-          <!--this will defer the loading of the page until the dom has rendered -->
+    <!--this will defer the loading of the page until the dom has rendered -->
     <!-- <script>
       console.log("js inside the html!!! woohoo!!!");
       function clicked() {
@@ -23,14 +23,12 @@
     />
   </head>
   <body>
-    <!-- <button onclick="printTheEventObject(event)">this is a button</button>
-    <input
-      value="username"
-      type="submit"
-      onclick="this.value=prompt('enter username')"
-    /> -->
-    <!-- <% String role=request.getSession().getAttribute("role").toString();%> -->
-    <h1 id ="welcome">All Reimbursements</h1>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+      <a class="navbar-brand" href="managerMain.page">Back to Main Menu</a>
+      <a class="navbar-brand" href="logout.page">Logout</a>
+    </nav>
+    <h1 class="welcome">All Reimbursements</h1>
+
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -40,13 +38,11 @@
           <th scope="col">status</th>
           <th scope="col">type</th>
           <th scope="col">amount</th>
-         
         </tr>
       </thead>
       <tbody id="completeReimBody"></tbody>
     </table>
-    <br><a href="managerMain.page">Back to Main Menu</a>
-    <br><a href="logout.page">Logout</a>
+    <br />
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

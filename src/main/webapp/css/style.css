@@ -58,12 +58,36 @@ p {
   border: 2px solid black;
 }
 
-/* customer main  */
-.customer-table {
-  width: 50%;
+#glad-welcome-box {
+  display: flex;
+  justify-content: center;
 }
 
-#welcome-top {
-  display: flex;
-  align-items: center;
+.new-form-div {
+  margin: auto;
+  width: 50%;
+  padding: 0 50px 50px 50px;
 }
+
+#description-box {
+  height: 200px;
+}
+
+#welcome-man-top {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+}
+#man-main-ques {
+  margin: 50px;
+}
+#links-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* #links-div a {
+  display: inline-block;
+  background-color: pink;
+  color: chartreuse;
+} */

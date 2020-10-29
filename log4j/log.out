@@ -213,3 +213,8 @@ USer createdcom.web.model.User@482942d8
 USer createdcom.web.model.User@6fe9c048
 Reimbursement createdcom.web.model.Reimbursement@24e7087a
 USer createdcom.web.model.User@65f470f8
+29-10-2020 08:33:46 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null
+Reimbursement createdcom.web.model.Reimbursement@711fd63d
+Reimbursement createdcom.web.model.Reimbursement@5e5a040f
+Reimbursement createdcom.web.model.Reimbursement@3cb5a3fb
+29-10-2020 09:47:58 --- exception loggin in user ---Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "password" is null

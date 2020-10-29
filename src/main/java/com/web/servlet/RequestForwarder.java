@@ -16,9 +16,6 @@ public class RequestForwarder {
 	public String routes(HttpServletRequest req) {
 		switch (req.getRequestURI()) {
 
-//		for Development (comment out/uncomment between the lines)
-//     -------------------------------------------------------------
-
 		case "/Project1/login.page":
 			sc.setSessionUsername(req, req.getParameter("username"));
 			sc.setSessionPassword(req, req.getParameter("password"));
@@ -47,10 +44,6 @@ public class RequestForwarder {
 			return new UserController().goToManagerMain(req);
 		case "/Project1/logout.page":
 			return new UserController().logout(req);
-
-//		--------------------------------------------------------------
-//		For Deployment
-//		------------------------------------------------------
 
 		case "/Project1-0.0.1-SNAPSHOT/login.page":
 			sc.setSessionUsername(req, req.getParameter("username"));
@@ -84,17 +77,11 @@ public class RequestForwarder {
 			return "html/login.html";
 		}
 
-//			-------------------------------------------
-
 	}
-
-//	------------------------------------------------------
 
 	public void data(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		switch (req.getRequestURI()) {
 
-//		data requests for development (comment out between the lines)
-//       -------------------------------------------------------------
 		case "/Project1/all.json":
 			new ReimbursementDataController().sendAllData(res);
 			break;
@@ -111,10 +98,6 @@ public class RequestForwarder {
 			new ReimbursementDataController().sendSessionName(res, req);
 			break;
 
-//		---------------------------------------------------------
-//			data requests for deployment
-//		------------------------------------------------------
-
 		case "/Project1-0.0.1-SNAPSHOT/all.json":
 			new ReimbursementDataController().sendAllData(res);
 			break;
@@ -130,8 +113,7 @@ public class RequestForwarder {
 		case "/Project1-0.0.1-SNAPSHOT/session.json":
 			new ReimbursementDataController().sendSessionName(res, req);
 			break;
-//
-//             -----------------------------------------------------
+
 		}
 	}
 }
