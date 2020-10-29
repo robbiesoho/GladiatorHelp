@@ -1,21 +1,31 @@
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
 #welcome {
-  font-size: 5rem;
+  font-size: 6rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+  border-bottom: 10px solid black;
+  background-color: chartreuse;
 }
 
-#login-div {
+#welcome-body {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
 }
 
-#login-form-div {
-  display: flex;
-  /* justify-content: baseline; */
-  flex-wrap: wrap;
+#login-word {
+  font-weight: bold;
 }
 
 p {
@@ -27,13 +37,33 @@ p {
   display: flex;
   flex-direction: column;
   margin: 5rem;
-  background-color: aquamarine;
+  background-color: chartreuse;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 25px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#login-form > * {
+  margin: 10px;
+}
+
+.form-text {
+  font-weight: bold;
 }
 
 #funny-img {
   margin: 20px;
+  border: 2px solid black;
 }
 
-/* css for the links */
-a {
+/* customer main  */
+.customer-table {
+  width: 50%;
+}
+
+#welcome-top {
+  display: flex;
+  align-items: center;
 }

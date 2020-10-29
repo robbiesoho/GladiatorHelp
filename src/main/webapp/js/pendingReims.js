@@ -61,8 +61,8 @@ async function asyncFetch(url, expression) {
   expression(json);
 }
 
-// asyncFetch("http://localhost:8080/Project1/pending.json", renderPendingTable);
-asyncFetch(
-  "http://3.17.110.130:8081/Project1-0.0.1-SNAPSHOT/pending.json",
-  renderPendingTable
-);
+asyncFetch("http://localhost:8080/Project1/pending.json", renderPendingTable);
+// asyncFetch(
+//   "http://3.17.110.130:8081/Project1-0.0.1-SNAPSHOT/pending.json",
+//   renderPendingTable
+// );

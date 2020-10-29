@@ -12,29 +12,38 @@
       crossorigin="anonymous"
     />
   </head>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="newclaim.page">Make a new claim</a>
+    <a class="navbar-brand" href="logout.page">Logout</a>
+    
+   
+  </nav>
+
   
   <h1 id="welcome-top"></h1>
 
   <h4>Your claims...</h4>
-  <table class="table table-striped">
-    <thead >
-      <tr>
-        <th scope="col">submitted</th>
-        <th scope="col">description</th>
-        <th scope="col">status</th>
-        <th scope="col">type</th>
-        <th scope="col">amount</th>
-        <th scope="col">delete</th>
-      </tr>
-    </thead>
-    
-    <tbody id="userReimBody"></tbody>
-    <input type=hidden id="userInput" name="username"><br>
 
-  </table>
-		<a href="newclaim.page">Make a new claim</a><br>
+  <div id="customer-table">
+    <table class="table table-striped">
+      <thead >
+        <tr>
+          <th scope="col">submitted</th>
+          <th scope="col">description</th>
+          <th scope="col">status</th>
+          <th scope="col">type</th>
+          <th scope="col">amount</th>
+          <th scope="col">delete</th>
+        </tr>
+      </thead>
+      
+      <tbody id="userReimBody"></tbody>
+      <input type=hidden id="userInput" name="username"><br>
+
+    </table>
+  </div>
+
   
-		<a href="logout.page">Logout</a>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
