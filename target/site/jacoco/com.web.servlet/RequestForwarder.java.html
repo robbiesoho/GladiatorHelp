@@ -14,7 +14,7 @@ import com.web.util.SessionController;
 <span class="nc" id="L14">	SessionController sc = new SessionController();</span>
 
 	public String routes(HttpServletRequest req) {
-<span class="nc bnc" id="L17" title="All 54 branches missed.">		switch (req.getRequestURI()) {</span>
+<span class="nc bnc" id="L17" title="All 79 branches missed.">		switch (req.getRequestURI()) {</span>
 
 //		for Development (comment out/uncomment between the lines)
 //     -------------------------------------------------------------
@@ -47,45 +47,42 @@ import com.web.util.SessionController;
 <span class="nc" id="L47">			return new UserController().goToManagerMain(req);</span>
 		case &quot;/Project1/logout.page&quot;:
 <span class="nc" id="L49">			return new UserController().logout(req);</span>
-		default:
-<span class="nc" id="L51">			return &quot;html/login.html&quot;;</span>
 
-		}
 //		--------------------------------------------------------------
 //		For Deployment
 //		------------------------------------------------------
 
-//		case &quot;/Project1-0.0.1-SNAPSHOT/login.page&quot;:
-//			sc.setSessionUsername(req, req.getParameter(&quot;username&quot;));
-//			sc.setSessionPassword(req, req.getParameter(&quot;password&quot;));
-//			return new UserController().login(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/newclaim.page&quot;:
-//			return new ReimbursementController().goToNewClaimPage(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/submitclaim.page&quot;:
-//			return new ReimbursementController().create(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page&quot;:
-//			return new ReimbursementController().delete(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/allReimbursements.page&quot;:
-//			return new ReimbursementController().goToAllReimPage(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/pendingReimbursements.page&quot;:
-//			return new ReimbursementController().goToPendingReimPage(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/approveReimbursement.page&quot;:
-//			return new ReimbursementController().approve(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/denyReimbursement.page&quot;:
-//			return new ReimbursementController().deny(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/newUser.page&quot;:
-//			return new UserController().goToNewUserPage(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/submitNewUser.page&quot;:
-//			return new UserController().create(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/userMain.page&quot;:
-//			return new UserController().goToUserMain(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/managerMain.page&quot;:
-//			return new UserController().goToManagerMain(req);
-//		case &quot;/Project1-0.0.1-SNAPSHOT/logout.page&quot;:
-//			return new UserController().logout(req);
-//		default:
-//			return &quot;html/login.html&quot;;
-//	}
+		case &quot;/Project1-0.0.1-SNAPSHOT/login.page&quot;:
+<span class="nc" id="L56">			sc.setSessionUsername(req, req.getParameter(&quot;username&quot;));</span>
+<span class="nc" id="L57">			sc.setSessionPassword(req, req.getParameter(&quot;password&quot;));</span>
+<span class="nc" id="L58">			return new UserController().login(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/newclaim.page&quot;:
+<span class="nc" id="L60">			return new ReimbursementController().goToNewClaimPage(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/submitclaim.page&quot;:
+<span class="nc" id="L62">			return new ReimbursementController().create(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page&quot;:
+<span class="nc" id="L64">			return new ReimbursementController().delete(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/allReimbursements.page&quot;:
+<span class="nc" id="L66">			return new ReimbursementController().goToAllReimPage(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/pendingReimbursements.page&quot;:
+<span class="nc" id="L68">			return new ReimbursementController().goToPendingReimPage(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/approveReimbursement.page&quot;:
+<span class="nc" id="L70">			return new ReimbursementController().approve(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/denyReimbursement.page&quot;:
+<span class="nc" id="L72">			return new ReimbursementController().deny(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/newUser.page&quot;:
+<span class="nc" id="L74">			return new UserController().goToNewUserPage(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/submitNewUser.page&quot;:
+<span class="nc" id="L76">			return new UserController().create(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/userMain.page&quot;:
+<span class="nc" id="L78">			return new UserController().goToUserMain(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/managerMain.page&quot;:
+<span class="nc" id="L80">			return new UserController().goToManagerMain(req);</span>
+		case &quot;/Project1-0.0.1-SNAPSHOT/logout.page&quot;:
+<span class="nc" id="L82">			return new UserController().logout(req);</span>
+		default:
+<span class="nc" id="L84">			return &quot;html/login.html&quot;;</span>
+		}
 
 //			-------------------------------------------
 
@@ -94,48 +91,48 @@ import com.web.util.SessionController;
 //	------------------------------------------------------
 
 	public void data(HttpServletRequest req, HttpServletResponse res) throws IOException {
-<span class="nc bnc" id="L97" title="All 18 branches missed.">		switch (req.getRequestURI()) {</span>
+<span class="nc bnc" id="L94" title="All 25 branches missed.">		switch (req.getRequestURI()) {</span>
 
 //		data requests for development (comment out between the lines)
 //       -------------------------------------------------------------
 		case &quot;/Project1/all.json&quot;:
-<span class="nc" id="L102">			new ReimbursementDataController().sendAllData(res);</span>
-<span class="nc" id="L103">			break;</span>
+<span class="nc" id="L99">			new ReimbursementDataController().sendAllData(res);</span>
+<span class="nc" id="L100">			break;</span>
 
 		case &quot;/Project1/complete.json&quot;:
-<span class="nc" id="L106">			new ReimbursementDataController().sendCompleteReimbursements(res);</span>
-<span class="nc" id="L107">			break;</span>
+<span class="nc" id="L103">			new ReimbursementDataController().sendCompleteReimbursements(res);</span>
+<span class="nc" id="L104">			break;</span>
 
 		case &quot;/Project1/pending.json&quot;:
-<span class="nc" id="L110">			new ReimbursementDataController().sendCompletePendingReimbursements(res);</span>
-<span class="nc" id="L111">			break;</span>
+<span class="nc" id="L107">			new ReimbursementDataController().sendCompletePendingReimbursements(res);</span>
+<span class="nc" id="L108">			break;</span>
 
 		case &quot;/Project1/session.json&quot;:
-<span class="nc" id="L114">			new ReimbursementDataController().sendSessionName(res, req);</span>
-			break;
+<span class="nc" id="L111">			new ReimbursementDataController().sendSessionName(res, req);</span>
+<span class="nc" id="L112">			break;</span>
 
 //		---------------------------------------------------------
 //			data requests for deployment
 //		------------------------------------------------------
 
-//		case &quot;/Project1-0.0.1-SNAPSHOT/all.json&quot;:
-//			new ReimbursementDataController().sendAllData(res);
-//			break;
-//
-//		case &quot;/Project1-0.0.1-SNAPSHOT/complete.json&quot;:
-//			new ReimbursementDataController().sendCompleteReimbursements(res);
-//			break;
-//
-//		case &quot;/Project1-0.0.1-SNAPSHOT/pending.json&quot;:
-//			new ReimbursementDataController().sendCompletePendingReimbursements(res);
-//			break;
-//
-//		case &quot;/Project1-0.0.1-SNAPSHOT/session.json&quot;:
-//			new ReimbursementDataController().sendSessionName(res, req);
-//			break;
+		case &quot;/Project1-0.0.1-SNAPSHOT/all.json&quot;:
+<span class="nc" id="L119">			new ReimbursementDataController().sendAllData(res);</span>
+<span class="nc" id="L120">			break;</span>
+
+		case &quot;/Project1-0.0.1-SNAPSHOT/complete.json&quot;:
+<span class="nc" id="L123">			new ReimbursementDataController().sendCompleteReimbursements(res);</span>
+<span class="nc" id="L124">			break;</span>
+
+		case &quot;/Project1-0.0.1-SNAPSHOT/pending.json&quot;:
+<span class="nc" id="L127">			new ReimbursementDataController().sendCompletePendingReimbursements(res);</span>
+<span class="nc" id="L128">			break;</span>
+
+		case &quot;/Project1-0.0.1-SNAPSHOT/session.json&quot;:
+<span class="nc" id="L131">			new ReimbursementDataController().sendSessionName(res, req);</span>
+			break;
 //
 //             -----------------------------------------------------
 		}
-<span class="nc" id="L139">	}</span>
+<span class="nc" id="L136">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

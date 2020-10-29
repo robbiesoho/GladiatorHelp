@@ -3,11 +3,19 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #login-div {
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#login-form-div {
+  display: flex;
+  /* justify-content: baseline; */
+  flex-wrap: wrap;
 }
 
 p {
@@ -20,6 +28,10 @@ p {
   flex-direction: column;
   margin: 5rem;
   background-color: aquamarine;
+}
+
+#funny-img {
+  margin: 20px;
 }
 
 /* css for the links */

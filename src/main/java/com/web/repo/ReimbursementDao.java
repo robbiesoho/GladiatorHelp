@@ -15,6 +15,12 @@ import com.web.model.Reimbursement;
 import com.web.util.ConnectionUtil;
 
 public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
+
+	public static void main(String[] args) {
+		ReimbursementDao rd = new ReimbursementDao();
+		System.out.println(rd.findById(5));
+	}
+
 	static Logger log = Logger.getLogger(UserDao.class);
 
 	@Override
@@ -46,7 +52,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	public Reimbursement findById(Integer i) {
 		Reimbursement reimb = null;
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
-			String sql = "select * from user_acc where user_id = ?";
+			String sql = "select * from reimbursement where reim_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, i);
 			ResultSet rs = ps.executeQuery();

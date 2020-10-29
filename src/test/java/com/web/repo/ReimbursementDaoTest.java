@@ -1,6 +1,5 @@
 package com.web.repo;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.LinkedList;
@@ -14,11 +13,13 @@ import com.web.model.Reimbursement;
 
 public class ReimbursementDaoTest {
 	private ReimbursementDao rd;
+	private ReimbursementDao rdReal;
 	Reimbursement testReim;
 	List<Reimbursement> reims = new LinkedList<>();
 
 	@Before
 	public void setup() {
+		rdReal = new ReimbursementDao();
 		rd = Mockito.mock(ReimbursementDao.class);
 		testReim = new Reimbursement(101, "validUser", "validPass", "validFirst", "validLast", "validEmail", 1, 1, 1,
 				1);
@@ -33,9 +34,9 @@ public class ReimbursementDaoTest {
 
 	@Test
 	public void findByIdTest() {
-		Mockito.when(rd.findById(101)).thenReturn(testReim);
-		Reimbursement r = rd.findById(101);
-		assertEquals(r.getId(), 101);
+//		Mockito.when(rd.findById(101)).thenReturn(testReim);
+		Reimbursement r = rdReal.findById(5);
+		assertNotNull(r);
 	}
 
 	@Test

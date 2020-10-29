@@ -13,45 +13,67 @@ import com.web.model.User;
 
 public class UserDaoTest {
 	private UserDao ud;
+	private UserDao udReal;
 	User testUser;
 
 	@Before
 	public void setup() {
+		udReal = new UserDao();
 		ud = Mockito.mock(UserDao.class);
-		testUser = new User(101, "validUser", "validPass", "validFirst", "validLast", "validEmail", 1);
+		testUser = new User(105, "UserDaoTester", "validPass", "validFirst", "validLast", "UserDaoEmail", 1);
 	}
 
 	@Test
 	public void findAllTest() {
-		List<User> users = ud.findAll();
-		assertNotNull(users.size() == 0);
+		List<User> users = udReal.findAll();
+		assertNotNull(users);
 	}
 
 	@Test
 	public void findByIdTest() {
-		Mockito.when(ud.findById(101)).thenReturn(testUser);
-		User u = ud.findById(101);
-		assertEquals(u.getId(), 101);
+		User u = udReal.findById(1);
+		assertNotNull(u);
+
 	}
 
-//	@Test
+	@Test
+	public void createAndDeleteUserTest() {
+		List<User> users = udReal.findAll();
+		int lengthBefore = users.size();
+		udReal.create(testUser);
+		assertEquals(udReal.findAll().size(), lengthBefore + 1);
+
+		User testUser = udReal.findByName("UserDaoTester");
+		int testId = testUser.getId();
+		List<User> users2 = udReal.findAll();
+		int lengthAfter = users2.size();
+		udReal.delete(testId);
+		assertEquals(udReal.findAll().size(), lengthAfter - 1);
+	}
+
 //	public void createUserTest() {
-//		Mockito.when(ud.create(testUser)).thenReturn("1");
-//		String str = ud.create(testUser);
-//		assertNotNull(str);
+//		List<User> users = udReal.findAll();
+//		int lengthBefore = users.size();
+//		udReal.create(testUser);
+//		assertEquals(udReal.findAll().size(), lengthBefore + 1);
+//	}
+//	
+//	@Test
+//	public void deleteUserTest() {
+//		User testUser = udReal.findByName("UserDaoTester");
+//		int testId = testUser.getId();
+//		List<User> users = udReal.findAll();
+//		int lengthBefore = users.size();
+//		System.out.println(testId);
+//		udReal.delete(testId);
+//		
+//		assertEquals(udReal.findAll().size(), lengthBefore - 1);
+//		
 //	}
 
 	@Test
-	public void deleteUserTest() {
-		Mockito.when(ud.delete(101)).thenReturn("1");
-		String str = ud.delete(101);
-		assertNotNull(str);
-	}
-
-	@Test
 	public void findByNameTest() {
-		Mockito.when(ud.findByName("validUser")).thenReturn(testUser);
-		User u = ud.findByName("validUser");
+		User u = udReal.findByName("testUser");
 		assertNotNull(u);
 	}
 

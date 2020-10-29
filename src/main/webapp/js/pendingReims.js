@@ -14,6 +14,12 @@ function renderPendingTable(reimbursements) {
     approveBox.appendChild(approveForm);
     approveForm.appendChild(approveButton);
 
+    approveForm.type = "submit";
+    approveForm.action = "approveReimbursement.page";
+    approveForm.method = "POST";
+    approveButton.name = "id";
+    approveButton.value = r.id;
+
     const denyForm = document.createElement("form");
     const denyBox = document.createElement("td");
     const denyButton = document.createElement("button");
@@ -21,23 +27,17 @@ function renderPendingTable(reimbursements) {
     denyBox.appendChild(denyForm);
     denyForm.appendChild(denyButton);
 
-    usernameTd.innerText = r.username;
-    dateSubmitTd.innerText = r.submitted;
-    descriptionTd.innerText = r.description;
-    typeTd.innerText = r.type;
-    amountTd.innerText = r.amount;
-
-    approveForm.type = "submit";
-    approveForm.action = "approveReimbursement.page";
-    approveForm.method = "POST";
-    approveButton.name = "id";
-    approveButton.value = r.id;
-
     denyForm.type = "submit";
     denyForm.action = "denyReimbursement.page";
     denyForm.method = "POST";
     denyButton.name = "id";
     denyButton.value = r.id;
+
+    usernameTd.innerText = r.username;
+    dateSubmitTd.innerText = r.submitted;
+    descriptionTd.innerText = r.description;
+    typeTd.innerText = r.type;
+    amountTd.innerText = r.amount;
 
     approveButton.innerText = "approve";
     denyButton.innerText = "deny";

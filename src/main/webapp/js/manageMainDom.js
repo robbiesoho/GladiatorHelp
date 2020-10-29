@@ -1,23 +1,3 @@
-function renderTable(reimbursements) {
-  for (const r of reimbursements) {
-    const tr = document.createElement("tr");
-    const amountTd = document.createElement("td");
-    const dateSubmitTD = document.createElement("td");
-    const descriptionTd = document.createElement("td");
-    const statusTd = document.createElement("td");
-    const typeTd = document.createElement("td");
-
-    amountTd.innerText = r.amount;
-    dateSubmitTD.innerText = r.submitted;
-    descriptionTd.innerText = r.description;
-    statusTd.innerText = r.status;
-    typeTd.innerText = r.type;
-    tr.append(amountTd, dateSubmitTD, descriptionTd, statusTd, typeTd);
-
-    document.getElementById("completeReimBody").append(tr);
-  }
-}
-
 function renderPendingTable(reimbursements) {
   for (const r of reimbursements) {
     const tr = document.createElement("tr");

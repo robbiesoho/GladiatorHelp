@@ -16,17 +16,17 @@ public class UserController {
 
 	private UserService us;
 	private SessionController sc;
-<span class="nc" id="L19">	static Logger log = Logger.getLogger(UserDao.class);</span>
+<span class="fc" id="L19">	static Logger log = Logger.getLogger(UserDao.class);</span>
 
 	public UserController(UserService us, SessionController sc) {
-<span class="nc" id="L22">		super();</span>
-<span class="nc" id="L23">		this.us = us;</span>
-<span class="nc" id="L24">		this.sc = sc;</span>
-<span class="nc" id="L25">	}</span>
+<span class="fc" id="L22">		super();</span>
+<span class="fc" id="L23">		this.us = us;</span>
+<span class="fc" id="L24">		this.sc = sc;</span>
+<span class="fc" id="L25">	}</span>
 
 	public UserController() {
-<span class="nc" id="L28">		this(new UserService(), new SessionController());</span>
-<span class="nc" id="L29">	}</span>
+<span class="fc" id="L28">		this(new UserService(), new SessionController());</span>
+<span class="fc" id="L29">	}</span>
 
 	public String login(HttpServletRequest req) {
 
@@ -56,29 +56,29 @@ public class UserController {
 	}
 
 	public String goToUserMain(HttpServletRequest req) {
-<span class="nc" id="L59">		return &quot;html/gladiator/main.html&quot;;</span>
+<span class="fc" id="L59">		return &quot;html/gladiator/main.html&quot;;</span>
 	}
 
 	public String goToManagerMain(HttpServletRequest req) {
-<span class="nc" id="L63">		return &quot;html/manager/main.html&quot;;</span>
+<span class="fc" id="L63">		return &quot;html/manager/main.html&quot;;</span>
 	}
 
 	public String goToNewUserPage(HttpServletRequest req) {
-<span class="nc" id="L67">		return &quot;html/manager/newUser.html&quot;;</span>
+<span class="fc" id="L67">		return &quot;html/manager/newUser.html&quot;;</span>
 	}
 
 	public String create(HttpServletRequest req) {
-<span class="nc" id="L71">		String username = req.getParameter(&quot;newusername&quot;);</span>
-<span class="nc" id="L72">		String password = req.getParameter(&quot;password&quot;);</span>
-<span class="nc" id="L73">		String first = req.getParameter(&quot;first&quot;);</span>
-<span class="nc" id="L74">		String last = req.getParameter(&quot;last&quot;);</span>
-<span class="nc" id="L75">		String email = req.getParameter(&quot;email&quot;);</span>
-<span class="nc" id="L76">		int roleId = 1;</span>
-<span class="nc" id="L77">		User user = new User(username, password, first, last, email, roleId);</span>
+<span class="fc" id="L71">		String username = req.getParameter(&quot;newusername&quot;);</span>
+<span class="fc" id="L72">		String password = req.getParameter(&quot;password&quot;);</span>
+<span class="fc" id="L73">		String first = req.getParameter(&quot;first&quot;);</span>
+<span class="fc" id="L74">		String last = req.getParameter(&quot;last&quot;);</span>
+<span class="fc" id="L75">		String email = req.getParameter(&quot;email&quot;);</span>
+<span class="fc" id="L76">		int roleId = 1;</span>
+<span class="fc" id="L77">		User user = new User(username, password, first, last, email, roleId);</span>
 
-<span class="nc" id="L79">		us.create(user);</span>
+<span class="fc" id="L79">		us.create(user);</span>
 
-<span class="nc" id="L81">		return &quot;html/manager/main.html&quot;;</span>
+<span class="fc" id="L81">		return &quot;html/manager/main.html&quot;;</span>
 	}
 
 	public String logout(HttpServletRequest req) {

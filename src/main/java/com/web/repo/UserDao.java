@@ -16,6 +16,12 @@ import com.web.util.ConnectionUtil;
 public class UserDao implements DaoContract<User, Integer> {
 	static Logger log = Logger.getLogger(UserDao.class);
 
+	public static void main(String[] args) {
+		UserDao ud = new UserDao();
+		User u = ud.findByName("validUser");
+		System.out.println(u.getUsername());
+	}
+
 	@Override
 	public List<User> findAll() {
 		List<User> users = new LinkedList<>();

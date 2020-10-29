@@ -14,11 +14,13 @@ import com.web.repo.UserDao;
 public class UserServiceTest {
 
 	private UserDao ud;
+	private UserDao udReal;
 	private UserService us;
 	User testUser;
 
 	@Before
 	public void setup() {
+		udReal = new UserDao();
 		ud = Mockito.mock(UserDao.class);
 		us = new UserService();
 		testUser = new User(101, "validUser", "validPass", "validFirst", "validLast", "validEmail", 1);
@@ -40,8 +42,9 @@ public class UserServiceTest {
 
 	@Test
 	public void createUserTest() {
-		String str = us.create(testUser);
-		assertNull(str);
+		assertNull(us.create(testUser));
+		User killMe = udReal.findByName("validUser");
+		udReal.delete(killMe.getId());
 
 	}
 

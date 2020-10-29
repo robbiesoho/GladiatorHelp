@@ -155,3 +155,61 @@ Error while creating user: ERROR: duplicate key value violates unique constraint
 Reimbursement createdcom.web.model.Reimbursement@2b19b346
 Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
   Detail: Key (username)=(validUser) already exists.
+Reimbursement createdcom.web.model.Reimbursement@3cfc1e93
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_email_key"
+  Detail: Key (email)=(validEmail) already exists.
+USer createdcom.web.model.User@4d666b41
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(UserDaoTester) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(UserDaoTester) already exists.
+USer createdcom.web.model.User@405325cf
+USer createdcom.web.model.User@1556f2dd
+USer createdcom.web.model.User@55a8dc49
+USer createdcom.web.model.User@30f4b1a6
+USer createdcom.web.model.User@5987e932
+USer createdcom.web.model.User@3e48e859
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(createUCUser) already exists.
+USer createdcom.web.model.User@3e48e859
+USer createdcom.web.model.User@3e48e859
+USer createdcom.web.model.User@3e48e859
+USer createdcom.web.model.User@ecfbe91
+USer createdcom.web.model.User@55b8dbda
+USer createdcom.web.model.User@1d035be3
+Reimbursement createdcom.web.model.Reimbursement@1ec7d8b3
+USer createdcom.web.model.User@16ade133
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@6622a690
+Reimbursement createdcom.web.model.Reimbursement@585ac855
+USer createdcom.web.model.User@1a28aef1
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@15051a0
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@50cf5a23
+USer createdcom.web.model.User@71b1a49c
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+Error while creating user: ERROR: duplicate key value violates unique constraint "user_acc_username_key"
+  Detail: Key (username)=(validUser) already exists.
+USer createdcom.web.model.User@1144a55a
+Reimbursement createdcom.web.model.Reimbursement@757529a4
+USer createdcom.web.model.User@37b72ea
+USer createdcom.web.model.User@69d6a7cd
+USer createdcom.web.model.User@482942d8
+USer createdcom.web.model.User@6fe9c048
+Reimbursement createdcom.web.model.Reimbursement@24e7087a
+USer createdcom.web.model.User@65f470f8
