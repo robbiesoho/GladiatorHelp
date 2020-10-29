@@ -73,7 +73,7 @@ public class UserDaoTest {
 
 	@Test
 	public void findByNameTest() {
-		User u = udReal.findByName("testUser");
+		User u = udReal.findByName("robert");
 		assertNotNull(u);
 	}
 

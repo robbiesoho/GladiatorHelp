@@ -28,14 +28,14 @@ public class UserServiceTest {
 
 	@Test
 	public void verifyLoginCredsTest() {
-		boolean checkStatus = us.validateCredentials("testUser", "pass");
+		boolean checkStatus = us.validateCredentials("robert", "pass");
 		assertTrue(checkStatus);
 
 	}
 
 	@Test
 	public void checkIfManagerTest() {
-		boolean checkStatus = us.isManager("testManager");
+		boolean checkStatus = us.isManager("robert");
 		assertTrue(checkStatus);
 
 	}
