@@ -35,7 +35,7 @@ public class ReimbursementDaoTest {
 	@Test
 	public void findByIdTest() {
 //		Mockito.when(rd.findById(101)).thenReturn(testReim);
-		Reimbursement r = rdReal.findById(5);
+		Reimbursement r = rdReal.findById(1);
 		assertNotNull(r);
 	}
 

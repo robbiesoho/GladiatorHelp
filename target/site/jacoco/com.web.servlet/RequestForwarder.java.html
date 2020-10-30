@@ -10,38 +10,38 @@ import com.web.controller.ReimbursementDataController;
 import com.web.controller.UserController;
 import com.web.util.SessionController;
 
-<span class="nc" id="L13">public class RequestForwarder {</span>
-<span class="nc" id="L14">	SessionController sc = new SessionController();</span>
+<span class="fc" id="L13">public class RequestForwarder {</span>
+<span class="fc" id="L14">	SessionController sc = new SessionController();</span>
 
 	public String routes(HttpServletRequest req) {
-<span class="nc bnc" id="L17" title="All 79 branches missed.">		switch (req.getRequestURI()) {</span>
+<span class="pc bpc" id="L17" title="43 of 79 branches missed.">		switch (req.getRequestURI()) {</span>
 
 		case &quot;/Project1/login.page&quot;:
 <span class="nc" id="L20">			sc.setSessionUsername(req, req.getParameter(&quot;username&quot;));</span>
 <span class="nc" id="L21">			sc.setSessionPassword(req, req.getParameter(&quot;password&quot;));</span>
 <span class="nc" id="L22">			return new UserController().login(req);</span>
 		case &quot;/Project1/newclaim.page&quot;:
-<span class="nc" id="L24">			return new ReimbursementController().goToNewClaimPage(req);</span>
+<span class="fc" id="L24">			return new ReimbursementController().goToNewClaimPage(req);</span>
 		case &quot;/Project1/submitclaim.page&quot;:
 <span class="nc" id="L26">			return new ReimbursementController().create(req);</span>
 		case &quot;/Project1/deleteReimbursement.page&quot;:
 <span class="nc" id="L28">			return new ReimbursementController().delete(req);</span>
 		case &quot;/Project1/allReimbursements.page&quot;:
-<span class="nc" id="L30">			return new ReimbursementController().goToAllReimPage(req);</span>
+<span class="fc" id="L30">			return new ReimbursementController().goToAllReimPage(req);</span>
 		case &quot;/Project1/pendingReimbursements.page&quot;:
-<span class="nc" id="L32">			return new ReimbursementController().goToPendingReimPage(req);</span>
+<span class="fc" id="L32">			return new ReimbursementController().goToPendingReimPage(req);</span>
 		case &quot;/Project1/approveReimbursement.page&quot;:
-<span class="nc" id="L34">			return new ReimbursementController().approve(req);</span>
+<span class="fc" id="L34">			return new ReimbursementController().approve(req);</span>
 		case &quot;/Project1/denyReimbursement.page&quot;:
-<span class="nc" id="L36">			return new ReimbursementController().deny(req);</span>
+<span class="fc" id="L36">			return new ReimbursementController().deny(req);</span>
 		case &quot;/Project1/newUser.page&quot;:
-<span class="nc" id="L38">			return new UserController().goToNewUserPage(req);</span>
+<span class="fc" id="L38">			return new UserController().goToNewUserPage(req);</span>
 		case &quot;/Project1/submitNewUser.page&quot;:
-<span class="nc" id="L40">			return new UserController().create(req);</span>
+<span class="fc" id="L40">			return new UserController().create(req);</span>
 		case &quot;/Project1/userMain.page&quot;:
-<span class="nc" id="L42">			return new UserController().goToUserMain(req);</span>
+<span class="fc" id="L42">			return new UserController().goToUserMain(req);</span>
 		case &quot;/Project1/managerMain.page&quot;:
-<span class="nc" id="L44">			return new UserController().goToManagerMain(req);</span>
+<span class="fc" id="L44">			return new UserController().goToManagerMain(req);</span>
 		case &quot;/Project1/logout.page&quot;:
 <span class="nc" id="L46">			return new UserController().logout(req);</span>
 
@@ -50,27 +50,27 @@ import com.web.util.SessionController;
 <span class="nc" id="L50">			sc.setSessionPassword(req, req.getParameter(&quot;password&quot;));</span>
 <span class="nc" id="L51">			return new UserController().login(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/newclaim.page&quot;:
-<span class="nc" id="L53">			return new ReimbursementController().goToNewClaimPage(req);</span>
+<span class="fc" id="L53">			return new ReimbursementController().goToNewClaimPage(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/submitclaim.page&quot;:
 <span class="nc" id="L55">			return new ReimbursementController().create(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/deleteReimbursement.page&quot;:
 <span class="nc" id="L57">			return new ReimbursementController().delete(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/allReimbursements.page&quot;:
-<span class="nc" id="L59">			return new ReimbursementController().goToAllReimPage(req);</span>
+<span class="fc" id="L59">			return new ReimbursementController().goToAllReimPage(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/pendingReimbursements.page&quot;:
-<span class="nc" id="L61">			return new ReimbursementController().goToPendingReimPage(req);</span>
+<span class="fc" id="L61">			return new ReimbursementController().goToPendingReimPage(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/approveReimbursement.page&quot;:
-<span class="nc" id="L63">			return new ReimbursementController().approve(req);</span>
+<span class="fc" id="L63">			return new ReimbursementController().approve(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/denyReimbursement.page&quot;:
-<span class="nc" id="L65">			return new ReimbursementController().deny(req);</span>
+<span class="fc" id="L65">			return new ReimbursementController().deny(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/newUser.page&quot;:
-<span class="nc" id="L67">			return new UserController().goToNewUserPage(req);</span>
+<span class="fc" id="L67">			return new UserController().goToNewUserPage(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/submitNewUser.page&quot;:
-<span class="nc" id="L69">			return new UserController().create(req);</span>
+<span class="fc" id="L69">			return new UserController().create(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/userMain.page&quot;:
-<span class="nc" id="L71">			return new UserController().goToUserMain(req);</span>
+<span class="fc" id="L71">			return new UserController().goToUserMain(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/managerMain.page&quot;:
-<span class="nc" id="L73">			return new UserController().goToManagerMain(req);</span>
+<span class="fc" id="L73">			return new UserController().goToManagerMain(req);</span>
 		case &quot;/Project1-0.0.1-SNAPSHOT/logout.page&quot;:
 <span class="nc" id="L75">			return new UserController().logout(req);</span>
 		default:

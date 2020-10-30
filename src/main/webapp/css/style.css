@@ -81,13 +81,15 @@ p {
 #man-main-ques {
   margin: 50px;
 }
+
+/* #man-main-menu {
+  background-color: chartreuse;
+  margin: 100px 0 50px 0;
+  height: 25%;
+} */
+
 #links-div {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-/* #links-div a {
-  display: inline-block;
-  background-color: pink;
-  color: chartreuse;
-} */

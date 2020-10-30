@@ -2,6 +2,8 @@ package com.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
+
 import com.web.model.Reimbursement;
 import com.web.model.User;
 import com.web.repo.UserDao;
@@ -12,6 +14,7 @@ public class ReimbursementController {
 	private UserDao udao;
 	private ReimbursementService rs;
 	private SessionController sc;
+	static Logger log = Logger.getLogger(UserDao.class);
 
 	public ReimbursementController(ReimbursementService rs, UserDao udao, SessionController sc) {
 		super();
@@ -70,21 +73,34 @@ public class ReimbursementController {
 	}
 
 	public String approve(HttpServletRequest req) {
-		String managerName = sc.getSessionUsername(req);
+		try {
+			String managerName = sc.getSessionUsername(req);
 
-		int userId = getIdFromUsername(managerName);
-		int reimId = Integer.parseInt(req.getParameter("id"));
-		rs.approve(reimId, userId);
-		return "html/manager/pendingReimbursements.html";
+			int userId = getIdFromUsername(managerName);
+			int reimId = Integer.parseInt(req.getParameter("id"));
+			rs.approve(reimId, userId);
+			return "html/manager/pendingReimbursements.html";
+		} catch (NullPointerException e) {
+			log.error("Exception when approving reimbursement" + e.getMessage());
+			return "html/login.html";
+
+		}
 	}
 
 	public String deny(HttpServletRequest req) {
-		String managerName = sc.getSessionUsername(req);
+		try {
+			String managerName = sc.getSessionUsername(req);
 
-		int userId = getIdFromUsername(managerName);
-		int reimId = Integer.parseInt(req.getParameter("id"));
-		rs.deny(reimId, userId);
-		return "html/manager/pendingReimbursements.html";
+			int userId = getIdFromUsername(managerName);
+			int reimId = Integer.parseInt(req.getParameter("id"));
+			rs.deny(reimId, userId);
+			return "html/manager/pendingReimbursements.html";
+		} catch (NullPointerException e) {
+			log.error("Exception when denying reimbursement" + e.getMessage());
+			return "html/login.html";
+
+		}
+
 	}
 
 }

@@ -10,15 +10,15 @@ import java.security.NoSuchAlgorithmException;
 <span class="nc" id="L10">public class MD5Utils {</span>
 
 <span class="fc" id="L12">	private static final Charset UTF_8 = StandardCharsets.UTF_8;</span>
-	private static final String OUTPUT_FORMAT = &quot;%-20s:%s&quot;;
+<span class="fc" id="L13">	private static final String OUTPUT_FORMAT = &quot;%-20s:%s&quot;;</span>
 
 	public static byte[] digest(byte[] input) {
 		MessageDigest md;
 		try {
 <span class="fc" id="L18">			md = MessageDigest.getInstance(&quot;MD5&quot;);</span>
-<span class="nc" id="L19">		} catch (NoSuchAlgorithmException e) {</span>
+<span class="pc" id="L19">		} catch (NoSuchAlgorithmException e) {</span>
 <span class="nc" id="L20">			throw new IllegalArgumentException(e);</span>
-<span class="fc" id="L21">		}</span>
+		}
 <span class="fc" id="L22">		byte[] result = md.digest(input);</span>
 <span class="fc" id="L23">		return result;</span>
 	}

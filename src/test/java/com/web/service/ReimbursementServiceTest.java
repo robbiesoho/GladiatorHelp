@@ -21,8 +21,8 @@ public class ReimbursementServiceTest {
 	public void setup() {
 		rdao = Mockito.mock(ReimbursementDao.class);
 		rs = new ReimbursementService();
-		testReim = new Reimbursement(101, "validUser", "validPass", "validFirst", "validLast", "validEmail", 1, 1, 1,
-				1);
+		testReim = new Reimbursement(101, "testReimbursement", "validPass", "validFirst", "validLast", "validEmail", 1,
+				1, 1, 1);
 
 	}
 

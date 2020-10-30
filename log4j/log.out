@@ -234,3 +234,75 @@ USer createdcom.web.model.User@482942d8
 USer createdcom.web.model.User@6fe9c048
 Reimbursement createdcom.web.model.Reimbursement@24e7087a
 USer createdcom.web.model.User@65f470f8
+USer createdcom.web.model.User@69cc49ec
+USer createdcom.web.model.User@36cdcae0
+Reimbursement createdcom.web.model.Reimbursement@5b6f3d0b
+USer createdcom.web.model.User@42c9b1ee
+USer createdcom.web.model.User@6f8d7714
+Reimbursement createdcom.web.model.Reimbursement@4905c46b
+USer createdcom.web.model.User@1ad8df52
+USer createdcom.web.model.User@1f6d27cc
+USer createdcom.web.model.User@69cc49ec
+USer createdcom.web.model.User@5c34b0f2
+Reimbursement createdcom.web.model.Reimbursement@285b491f
+USer createdcom.web.model.User@3117ac8d
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (29, null, null, null, null, null, 1).
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (30, null, null, null, null, null, 1).
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (31, null, null, null, null, null, 1).
+USer createdcom.web.model.User@1358b28e
+Reimbursement createdcom.web.model.Reimbursement@1623bbe5
+USer createdcom.web.model.User@7b3315a5
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (34, null, null, null, null, null, 1).
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (35, null, null, null, null, null, 1).
+USer createdcom.web.model.User@66e8997c
+USer createdcom.web.model.User@116915f1
+USer createdcom.web.model.User@789d8fd6
+Reimbursement createdcom.web.model.Reimbursement@3e1897d
+USer createdcom.web.model.User@19e5e110
+Exception when approving reimbursementnull
+Exception when denying reimbursementnull
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (40, null, null, null, null, null, 1).
+Exception when approving reimbursementnull
+Exception when denying reimbursementnull
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (41, null, null, null, null, null, 1).
+USer createdcom.web.model.User@3e521715
+Reimbursement createdcom.web.model.Reimbursement@779de014
+USer createdcom.web.model.User@cc239ba
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (44, null, null, null, null, null, 1).
+Exception when approving reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Exception when denying reimbursementCannot invoke "javax.servlet.http.HttpSession.getAttribute(String)" because the return value of "javax.servlet.http.HttpServletRequest.getSession()" is null
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (45, null, null, null, null, null, 1).
+USer createdcom.web.model.User@60737b23
+USer createdcom.web.model.User@91a1005
+USer createdcom.web.model.User@726d8fa0
+Reimbursement createdcom.web.model.Reimbursement@1d0f7bcf
+USer createdcom.web.model.User@126d0868
+Exception when approving reimbursementnull
+Exception when denying reimbursementnull
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (50, null, null, null, null, null, 1).
+Exception when approving reimbursementnull
+Exception when denying reimbursementnull
+Error while creating user: ERROR: null value in column "username" violates not-null constraint
+  Detail: Failing row contains (51, null, null, null, null, null, 1).
