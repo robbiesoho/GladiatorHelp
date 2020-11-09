@@ -4,21 +4,21 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 ## Technologies Used
 
-*JavaScript
-*HTML/CSS
-*AJAX
-*SQL
-*Java
-*Servlets
-*JDBC
-*PostgreSQL
-*Agile-Scrum
+* JavaScript
+* HTML/CSS
+* AJAX
+* SQL
+* Java
+* Servlets
+* JDBC
+* PostgreSQL
+* Agile-Scrum
 
 ## Features
-*Employees/Finance Managers can log in and access their own custom account information
-*Employees can create new reimbursement requests and click on dynamically generated buttons to remove requests that are not yet under review
-*Finance managers may click on dynamically generated buttons to approve/deny reimbursement requests
-*Finance managers can create new employees
+* Employees/Finance Managers can log in and access their own custom account information
+* Employees can create new reimbursement requests and click on dynamically generated buttons to remove requests that are not yet under review
+* Finance managers may click on dynamically generated buttons to approve/deny reimbursement requests
+* Finance managers can create new employees
 
 ## Getting Started
 
